@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Login | StudentHub</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- ===================== LOGIN CONTAINER ===================== -->
+
+    <main class="login-page">
+
+        <section class="login-container">
+
+            <!-- Left Side -->
+
+            <div class="login-left">
+
+                <div class="login-content">
+
+                    <h1>StudentHub</h1>
+
+                    <h2>Welcome Back!</h2>
+
+                    <p>
+                        Login to access your dashboard, attendance,
+                        assignments, study materials, timetable and profile.
+                    </p>
+
+                    <img src="images/login.png"
+                        alt="Student Login Illustration">
+
+                </div>
+
+            </div>
+
+            <!-- Right Side -->
+
+            <div class="login-right">
+
+                <form action="dashboard.html" method="post" class="login-form">
+
+                    <h2>Student Login</h2>
+
+                    <p>
+                        Sign in using your Student ID and Password.
+                    </p>
+
+                    <!-- Student ID -->
+
+                    <div class="input-box">
+
+                        <label for="studentid">
+                            Student ID
+                        </label>
+
+                        <div class="input-field">
+
+                            <i class="fa-solid fa-id-card"></i>
+
+                            <input
+                                type="text"
+                                id="studentid"
+                                name="studentid"
+                                placeholder="Enter Student ID"
+                                required>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Password -->
+
+                    <div class="input-box">
+
+                        <label for="password">
+                            Password
+                        </label>
+
+                        <div class="input-field">
+
+                            <i class="fa-solid fa-lock"></i>
+
+                            <input
+                                type="password"
+                                id="password"
+                                name="password"
+                                placeholder="Enter Password"
+                                required>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Options -->
+
+                    <div class="login-options">
+
+                        <label>
+
+                            <input type="checkbox">
+
+                            Remember Me
+
+                        </label>
+
+                        <a href="#">
+                            Forgot Password?
+                        </a>
+
+                    </div>
+
+                    <!-- Login Button -->
+
+                    <button type="submit" class="login-btn">
+
+                        <i class="fa-solid fa-right-to-bracket"></i>
+
+                        Login
+
+                    </button>
+
+                    <!-- Divider -->
+
+                    <div class="divider">
+
+                        <span>OR</span>
+
+                    </div>
+
+                    <!-- Google Login -->
+
+                    <button type="button" class="google-btn">
+
+                        <i class="fa-brands fa-google"></i>
+
+                        Continue with Google
+
+                    </button>
+
+                    <!-- Register -->
+
+                    <div class="register-link">
+
+                        <p>
+
+                            Don't have an account?
+
+                            <a href="register.html">
+
+                                Register
+
+                            </a>
+
+                        </p>
+
+                    </div>
+
+                    <!-- Home -->
+
+                    <div class="back-home">
+
+                        <a href="index.html">
+
+                            <i class="fa-solid fa-house"></i>
+
+                            Back to Home
+
+                        </a>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="js/script.js"></script>
+
+</body>
+</html>

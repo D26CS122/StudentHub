@@ -1,0 +1,4041 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="StudentHub Admin Portal - Manage students, events, announcements, feedback and analytics."
+    >
+
+    <meta
+        name="theme-color"
+        content="#16a34a"
+    >
+
+    <title>StudentHub | Admin Portal</title>
+
+    <!-- Google Font -->
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    >
+
+    <!-- EXTERNAL CSS -->
+    <link
+        rel="stylesheet"
+        href="../css/style.css"
+    >
+</head>
+
+<body class="admin-body theme-teal">
+
+<!-- =========================================================
+     ADMIN LOGIN
+========================================================= -->
+
+<section
+    class="admin-login-screen"
+    id="adminLoginScreen"
+>
+
+    <div class="admin-login-background">
+
+        <div class="floating-ball ball-one"></div>
+        <div class="floating-ball ball-two"></div>
+        <div class="floating-ball ball-three"></div>
+        <div class="floating-ball ball-four"></div>
+        <div class="floating-ball ball-five"></div>
+
+    </div>
+
+
+    <div class="admin-login-container">
+
+        <!-- BRAND -->
+
+        <div class="admin-login-brand">
+
+            <div class="admin-big-logo">
+
+                <i class="fa-solid fa-graduation-cap"></i>
+
+            </div>
+
+            <h1>
+                Student<span>Hub</span>
+            </h1>
+
+            <p>
+                Administration Portal
+            </p>
+
+        </div>
+
+
+        <!-- LOGIN CARD -->
+
+        <div class="admin-login-card">
+
+            <div class="admin-login-heading">
+
+                <span class="admin-badge">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    Secure Access
+                </span>
+
+                <h2>
+                    Welcome Back, Admin
+                </h2>
+
+                <p>
+                    Sign in to manage the StudentHub portal.
+                </p>
+
+            </div>
+
+
+            <form
+                id="adminLoginForm"
+                autocomplete="off"
+            >
+
+                <!-- USERNAME -->
+
+                <div class="form-group">
+
+                    <label for="adminUsername">
+                        Username
+                    </label>
+
+                    <div class="input-with-icon">
+
+                        <i class="fa-solid fa-user-shield"></i>
+
+                        <input
+                            type="text"
+                            id="adminUsername"
+                            name="username"
+                            placeholder="Enter admin username"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- PASSWORD -->
+
+                <div class="form-group">
+
+                    <div class="password-label-row">
+
+                        <label for="adminPassword">
+                            Password
+                        </label>
+
+                        <span>
+                            Admin Access
+                        </span>
+
+                    </div>
+
+                    <div class="input-with-icon">
+
+                        <i class="fa-solid fa-lock"></i>
+
+                        <input
+                            type="password"
+                            id="adminPassword"
+                            name="password"
+                            placeholder="Enter admin password"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            class="password-toggle"
+                            id="adminPasswordToggle"
+                            aria-label="Show password"
+                        >
+
+                            <i class="fa-regular fa-eye"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- REMEMBER -->
+
+                <div class="admin-login-options">
+
+                    <label class="checkbox-label">
+
+                        <input
+                            type="checkbox"
+                            id="rememberAdmin"
+                        >
+
+                        <span>
+                            Remember me
+                        </span>
+
+                    </label>
+
+                    <a
+                        href="#"
+                        id="forgotAdminPassword"
+                    >
+                        Forgot password?
+                    </a>
+
+                </div>
+
+
+                <!-- LOGIN BUTTON -->
+
+                <button
+                    type="submit"
+                    class="admin-login-button"
+                >
+
+                    <span>
+                        Sign In
+                    </span>
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+
+                <div
+                    class="admin-login-error"
+                    id="adminLoginError"
+                    hidden
+                >
+                    <i class="fa-solid fa-circle-exclamation"></i>
+
+                    <span>
+                        Invalid admin username or password.
+                    </span>
+
+                </div>
+
+            </form>
+
+
+            <div class="admin-login-footer">
+
+                <i class="fa-solid fa-lock"></i>
+
+                Protected StudentHub administration area
+
+            </div>
+
+        </div>
+
+
+        <!-- BACK -->
+
+        <a
+            href="index.html"
+            class="back-to-studenthub"
+        >
+
+            <i class="fa-solid fa-arrow-left"></i>
+
+            Back to StudentHub
+
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     ADMIN PORTAL
+========================================================= -->
+
+<section
+    class="admin-portal"
+    id="adminPortal"
+    hidden
+>
+
+    <!-- MOBILE OVERLAY -->
+
+    <div
+        class="admin-mobile-overlay"
+        id="adminMobileOverlay"
+    ></div>
+
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside
+        class="admin-sidebar"
+        id="adminSidebar"
+    >
+
+        <!-- BRAND -->
+
+        <div class="admin-sidebar-brand">
+
+            <a
+                href="#dashboard"
+                class="admin-brand"
+                data-section="dashboard"
+            >
+
+                <div class="admin-brand-logo">
+
+                    <i class="fa-solid fa-graduation-cap"></i>
+
+                </div>
+
+                <div class="admin-brand-text">
+
+                    <strong>
+                        StudentHub
+                    </strong>
+
+                    <span>
+                        Admin Portal
+                    </span>
+
+                </div>
+
+            </a>
+
+        </div>
+
+
+        <!-- ADMIN PROFILE -->
+
+        <div class="admin-sidebar-profile">
+
+            <div class="admin-sidebar-avatar">
+
+                <i class="fa-solid fa-user-shield"></i>
+
+            </div>
+
+            <div class="admin-sidebar-user">
+
+                <strong>
+                    Administrator
+                </strong>
+
+                <span>
+                    Super Admin
+                </span>
+
+            </div>
+
+            <span class="admin-online-dot"></span>
+
+        </div>
+
+
+        <!-- NAVIGATION -->
+
+        <nav class="admin-navigation">
+
+            <span class="admin-navigation-title">
+                MAIN MENU
+            </span>
+
+
+            <button
+                type="button"
+                class="admin-nav-item is-active"
+                data-section="dashboard"
+                data-label="Dashboard"
+            >
+
+                <i class="fa-solid fa-chart-pie"></i>
+
+                <span>
+                    Dashboard
+                </span>
+
+            </button>
+
+
+            <button
+                type="button"
+                class="admin-nav-item"
+                data-section="students"
+                data-label="Students"
+            >
+
+                <i class="fa-solid fa-user-graduate"></i>
+
+                <span>
+                    Students
+                </span>
+
+                <b data-admin-stat="total">
+                    0
+                </b>
+
+            </button>
+
+
+            <button
+                type="button"
+                class="admin-nav-item"
+                data-section="events"
+                data-label="Events"
+            >
+
+                <i class="fa-solid fa-calendar-days"></i>
+
+                <span>
+                    Events
+                </span>
+
+            </button>
+
+
+            <button
+                type="button"
+                class="admin-nav-item"
+                data-section="announcements"
+                data-label="Announcements"
+            >
+
+                <i class="fa-solid fa-bullhorn"></i>
+
+                <span>
+                    Announcements
+                </span>
+
+            </button>
+
+
+            <span class="admin-navigation-title">
+                MANAGEMENT
+            </span>
+
+
+            <button
+                type="button"
+                class="admin-nav-item"
+                data-section="feedback"
+                data-label="Feedback"
+            >
+
+                <i class="fa-solid fa-comments"></i>
+
+                <span>
+                    Feedback
+                </span>
+
+            </button>
+
+
+            <button
+                type="button"
+                class="admin-nav-item"
+                data-section="analytics"
+                data-label="Analytics"
+            >
+
+                <i class="fa-solid fa-chart-line"></i>
+
+                <span>
+                    Analytics
+                </span>
+
+            </button>
+
+
+            <button
+                type="button"
+                class="admin-nav-item"
+                data-section="settings"
+                data-label="Settings"
+            >
+
+                <i class="fa-solid fa-gear"></i>
+
+                <span>
+                    Settings
+                </span>
+
+            </button>
+
+        </nav>
+
+
+        <!-- SIDEBAR FOOTER -->
+
+        <div class="admin-sidebar-footer">
+
+            <a
+                href="index.html"
+                class="admin-sidebar-link"
+            >
+
+                <i class="fa-solid fa-house"></i>
+
+                <span>
+                    Student Portal
+                </span>
+
+            </a>
+
+
+            <button
+                type="button"
+                class="admin-sidebar-link logout-button"
+                id="adminLogout"
+            >
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+
+                <span>
+                    Logout
+                </span>
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =====================================================
+         MAIN AREA
+    ====================================================== -->
+
+    <main class="admin-main">
+
+        <!-- TOPBAR -->
+
+        <header class="admin-topbar">
+
+            <div class="admin-topbar-left">
+
+                <button
+                    type="button"
+                    class="admin-menu-button"
+                    id="adminMenuButton"
+                    aria-label="Toggle sidebar"
+                >
+
+                    <i class="fa-solid fa-bars"></i>
+
+                </button>
+
+
+                <div class="admin-page-heading">
+
+                    <span id="adminBreadcrumb">
+                        StudentHub / Dashboard
+                    </span>
+
+                    <h1 id="adminSectionTitle">
+                        Dashboard
+                    </h1>
+
+                </div>
+
+            </div>
+
+
+            <div class="admin-topbar-right">
+
+                <!-- SEARCH -->
+
+                <div class="admin-global-search">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    <input
+                        type="search"
+                        id="adminGlobalSearch"
+                        placeholder="Search..."
+                    >
+
+                    <kbd>
+                        /
+                    </kbd>
+
+                </div>
+
+
+                <!-- THEME -->
+
+                <button
+                    type="button"
+                    class="admin-top-icon"
+                    id="adminThemeToggle"
+                    title="Toggle theme"
+                >
+
+                    <i class="fa-solid fa-moon"></i>
+
+                </button>
+
+
+                <!-- NOTIFICATIONS -->
+
+                <button
+                    type="button"
+                    class="admin-top-icon notification-button"
+                    id="adminNotificationButton"
+                    title="Notifications"
+                >
+
+                    <i class="fa-regular fa-bell"></i>
+
+                    <span id="adminNotificationBadge" hidden>
+                        0
+                    </span>
+
+                </button>
+
+
+                <!-- PROFILE -->
+
+                <div class="admin-top-profile">
+
+                    <div class="admin-top-avatar">
+
+                        <i class="fa-solid fa-user-shield"></i>
+
+                    </div>
+
+                    <div class="admin-top-user">
+
+                        <strong>
+                            Admin
+                        </strong>
+
+                        <span>
+                            Super Admin
+                        </span>
+
+                    </div>
+
+                    <i class="fa-solid fa-chevron-down"></i>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- =================================================
+             CONTENT
+        ================================================== -->
+
+        <div class="admin-content">
+
+
+            <!-- =================================================
+                 DASHBOARD
+            ================================================== -->
+
+            <section
+                class="admin-section"
+                id="section-dashboard"
+            >
+
+                <div class="admin-section-header">
+
+                    <div>
+
+                        <span class="admin-overline">
+                            Overview
+                        </span>
+
+                        <h2>
+                            Welcome back, Administrator 👋
+                        </h2>
+
+                        <p>
+                            Here's what's happening across StudentHub today.
+                        </p>
+
+                    </div>
+
+
+                    <div class="admin-header-actions">
+
+                        <button
+                            type="button"
+                            class="admin-secondary-button"
+                            id="dashboardRefresh"
+                        >
+
+                            <i class="fa-solid fa-rotate"></i>
+
+                            Refresh
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="admin-primary-button"
+                            data-section-action="announcements"
+                        >
+
+                            <i class="fa-solid fa-plus"></i>
+
+                            New Announcement
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- STAT CARDS -->
+
+                <div class="admin-stat-grid">
+
+
+                    <article class="admin-stat-card">
+
+                        <div class="admin-stat-icon green">
+
+                            <i class="fa-solid fa-user-graduate"></i>
+
+                        </div>
+
+                        <div class="admin-stat-info">
+
+                            <span>
+                                Total Students
+                            </span>
+
+                            <strong data-admin-stat="total">
+                                0
+                            </strong>
+
+                            <small>
+                                Registered accounts
+                            </small>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="admin-stat-card">
+
+                        <div class="admin-stat-icon blue">
+
+                            <i class="fa-solid fa-user-check"></i>
+
+                        </div>
+
+                        <div class="admin-stat-info">
+
+                            <span>
+                                Active Students
+                            </span>
+
+                            <strong data-admin-stat="active">
+                                0
+                            </strong>
+
+                            <small>
+                                Currently active
+                            </small>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="admin-stat-card">
+
+                        <div class="admin-stat-icon orange">
+
+                            <i class="fa-solid fa-user-check"></i>
+
+                        </div>
+
+                        <div class="admin-stat-info">
+
+                            <span>
+                                Avg Attendance
+                            </span>
+
+                            <strong data-admin-stat="avgAttendance">
+                                —
+                            </strong>
+
+                            <small>
+                                Across all students
+                            </small>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="admin-stat-card">
+
+                        <div class="admin-stat-icon purple">
+
+                            <i class="fa-solid fa-award"></i>
+
+                        </div>
+
+                        <div class="admin-stat-info">
+
+                            <span>
+                                Avg CGPA
+                            </span>
+
+                            <strong data-admin-stat="avgCgpa">
+                                —
+                            </strong>
+
+                            <small>
+                                Class average
+                            </small>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+
+                <!-- DASHBOARD GRID -->
+
+                <div class="admin-dashboard-grid">
+
+
+                    <!-- ACTIVITY CHART -->
+
+                    <article class="admin-panel admin-chart-panel large">
+
+                        <div class="admin-panel-header">
+
+                            <div>
+
+                                <span>
+                                    Platform Performance
+                                </span>
+
+                                <h3>
+                                    Student Activity
+                                </h3>
+
+                            </div>
+
+
+                            <select
+                                class="admin-select"
+                                id="dashboardChartPeriod"
+                            >
+
+                                <option>
+                                    Last 7 Days
+                                </option>
+
+                                <option selected>
+                                    Last 30 Days
+                                </option>
+
+                                <option>
+                                    Last 90 Days
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="admin-chart">
+
+                            <div class="chart-y">
+
+                                <span>
+                                    1000
+                                </span>
+
+                                <span>
+                                    800
+                                </span>
+
+                                <span>
+                                    600
+                                </span>
+
+                                <span>
+                                    400
+                                </span>
+
+                                <span>
+                                    200
+                                </span>
+
+                                <span>
+                                    0
+                                </span>
+
+                            </div>
+
+
+                            <div class="chart-main">
+
+                                <div class="chart-lines">
+
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+
+                                </div>
+
+
+                                <svg
+                                    viewBox="0 0 800 280"
+                                    preserveAspectRatio="none"
+                                    class="activity-svg"
+                                >
+
+                                    <defs>
+
+                                        <linearGradient
+                                            id="greenChart"
+                                            x1="0"
+                                            y1="0"
+                                            x2="0"
+                                            y2="1"
+                                        >
+
+                                            <stop
+                                                offset="0%"
+                                                stop-opacity=".25"
+                                            />
+
+                                            <stop
+                                                offset="100%"
+                                                stop-opacity="0"
+                                            />
+
+                                        </linearGradient>
+
+                                    </defs>
+
+
+                                    <path
+                                        class="chart-fill"
+                                        d="M0 220
+                                        C45 205 60 215 95 180
+                                        C125 150 145 170 175 145
+                                        C205 120 230 140 260 115
+                                        C295 85 315 105 350 90
+                                        C385 70 410 88 445 65
+                                        C475 45 500 65 530 48
+                                        C565 30 585 52 620 38
+                                        C655 25 680 40 710 22
+                                        C745 10 770 22 800 8
+                                        L800 280
+                                        L0 280 Z"
+                                    ></path>
+
+
+                                    <path
+                                        class="chart-line"
+                                        d="M0 220
+                                        C45 205 60 215 95 180
+                                        C125 150 145 170 175 145
+                                        C205 120 230 140 260 115
+                                        C295 85 315 105 350 90
+                                        C385 70 410 88 445 65
+                                        C475 45 500 65 530 48
+                                        C565 30 585 52 620 38
+                                        C655 25 680 40 710 22
+                                        C745 10 770 22 800 8"
+                                    ></path>
+
+                                </svg>
+
+
+                                <div class="chart-x">
+
+                                    <span>1</span>
+                                    <span>5</span>
+                                    <span>10</span>
+                                    <span>15</span>
+                                    <span>20</span>
+                                    <span>25</span>
+                                    <span>30</span>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="chart-footer">
+
+                            <div>
+
+                                <span class="chart-legend-dot"></span>
+
+                                Active Students
+
+                            </div>
+
+                            <strong>
+                                936 active users
+                            </strong>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- QUICK ACTIONS -->
+
+                    <article class="admin-panel">
+
+                        <div class="admin-panel-header">
+
+                            <div>
+
+                                <span>
+                                    Management
+                                </span>
+
+                                <h3>
+                                    Quick Actions
+                                </h3>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="quick-action-grid">
+
+                            <button
+                                type="button"
+                                class="quick-action"
+                                data-section-action="students"
+                            >
+
+                                <i class="fa-solid fa-user-plus"></i>
+
+                                <span>
+                                    Add Student
+                                </span>
+
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="quick-action"
+                                data-section-action="events"
+                            >
+
+                                <i class="fa-solid fa-calendar-plus"></i>
+
+                                <span>
+                                    Create Event
+                                </span>
+
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="quick-action"
+                                data-section-action="announcements"
+                            >
+
+                                <i class="fa-solid fa-bullhorn"></i>
+
+                                <span>
+                                    Announcement
+                                </span>
+
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="quick-action"
+                                data-section-action="analytics"
+                            >
+
+                                <i class="fa-solid fa-chart-line"></i>
+
+                                <span>
+                                    View Analytics
+                                </span>
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- RECENT ACTIVITY -->
+
+                    <article class="admin-panel">
+
+                        <div class="admin-panel-header">
+
+                            <div>
+
+                                <span>
+                                    Live Updates
+                                </span>
+
+                                <h3>
+                                    Recent Activity
+                                </h3>
+
+                            </div>
+
+                            <span class="live-badge">
+
+                                <i class="fa-solid fa-circle"></i>
+
+                                Live
+
+                            </span>
+
+                        </div>
+
+
+                        <div class="admin-activity-list">
+
+
+                            <div class="admin-activity">
+
+                                <div class="activity-icon green">
+
+                                    <i class="fa-solid fa-user-plus"></i>
+
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        New student registered
+                                    </strong>
+
+                                    <span>
+                                        Aarav Shah joined StudentHub
+                                    </span>
+
+                                </div>
+
+                                <time>
+                                    2m
+                                </time>
+
+                            </div>
+
+
+                            <div class="admin-activity">
+
+                                <div class="activity-icon blue">
+
+                                    <i class="fa-solid fa-calendar-check"></i>
+
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        Event registration
+                                    </strong>
+
+                                    <span>
+                                        12 students registered
+                                    </span>
+
+                                </div>
+
+                                <time>
+                                    8m
+                                </time>
+
+                            </div>
+
+
+                            <div class="admin-activity">
+
+                                <div class="activity-icon orange">
+
+                                    <i class="fa-solid fa-message"></i>
+
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        New feedback
+                                    </strong>
+
+                                    <span>
+                                        Student submitted feedback
+                                    </span>
+
+                                </div>
+
+                                <time>
+                                    14m
+                                </time>
+
+                            </div>
+
+
+                            <div class="admin-activity">
+
+                                <div class="activity-icon purple">
+
+                                    <i class="fa-solid fa-bullhorn"></i>
+
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        Announcement published
+                                    </strong>
+
+                                    <span>
+                                        Internship notice published
+                                    </span>
+
+                                </div>
+
+                                <time>
+                                    21m
+                                </time>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- UPCOMING EVENTS -->
+
+                    <article class="admin-panel">
+
+                        <div class="admin-panel-header">
+
+                            <div>
+
+                                <span>
+                                    Calendar
+                                </span>
+
+                                <h3>
+                                    Upcoming Events
+                                </h3>
+
+                            </div>
+
+                            <button
+                                type="button"
+                                class="text-button"
+                                data-section-action="events"
+                            >
+                                View All
+                            </button>
+
+                        </div>
+
+
+                        <div class="admin-event-list">
+
+
+                            <div class="admin-event-item">
+
+                                <div class="event-date">
+
+                                    <strong>
+                                        24
+                                    </strong>
+
+                                    <span>
+                                        AUG
+                                    </span>
+
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        Tech Hackathon 2026
+                                    </strong>
+
+                                    <span>
+                                        10:00 AM · Seminar Hall
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="admin-event-item">
+
+                                <div class="event-date">
+
+                                    <strong>
+                                        28
+                                    </strong>
+
+                                    <span>
+                                        AUG
+                                    </span>
+
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        Cyber Security Workshop
+                                    </strong>
+
+                                    <span>
+                                        02:00 PM · Lab 3
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="admin-event-item">
+
+                                <div class="event-date">
+
+                                    <strong>
+                                        03
+                                    </strong>
+
+                                    <span>
+                                        SEP
+                                    </span>
+
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        AI & Robotics Expo
+                                    </strong>
+
+                                    <span>
+                                        11:00 AM · Main Auditorium
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 STUDENTS
+            ================================================== -->
+
+            <section
+                class="admin-section"
+                id="section-students"
+                hidden
+            >
+
+                <div class="admin-section-header">
+
+                    <div>
+
+                        <span class="admin-overline">
+                            Management
+                        </span>
+
+                        <h2>
+                            Students
+                        </h2>
+
+                        <p>
+                            Manage registered students and their information.
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="admin-primary-button"
+                        id="addStudentButton"
+                    >
+
+                        <i class="fa-solid fa-user-plus"></i>
+
+                        Add Student
+
+                    </button>
+
+                </div>
+
+
+                <div class="admin-stat-grid">
+
+
+                    <article class="admin-stat-card compact">
+
+                        <div class="admin-stat-icon green">
+
+                            <i class="fa-solid fa-users"></i>
+
+                        </div>
+
+                        <div class="admin-stat-info">
+
+                            <span>
+                                Total Students
+                            </span>
+
+                            <strong data-admin-stat="total">
+                                0
+                            </strong>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="admin-stat-card compact">
+
+                        <div class="admin-stat-icon blue">
+
+                            <i class="fa-solid fa-user-check"></i>
+
+                        </div>
+
+                        <div class="admin-stat-info">
+
+                            <span>
+                                Active
+                            </span>
+
+                            <strong data-admin-stat="active">
+                                0
+                            </strong>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="admin-stat-card compact">
+
+                        <div class="admin-stat-icon orange">
+
+                            <i class="fa-solid fa-user-clock"></i>
+
+                        </div>
+
+                        <div class="admin-stat-info">
+
+                            <span>
+                                Avg Attendance
+                            </span>
+
+                            <strong data-admin-stat="avgAttendance">
+                                —
+                            </strong>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="admin-stat-card compact">
+
+                        <div class="admin-stat-icon purple">
+
+                            <i class="fa-solid fa-user-graduate"></i>
+
+                        </div>
+
+                        <div class="admin-stat-info">
+
+                            <span>
+                                New This Week
+                            </span>
+
+                            <strong data-admin-stat="newThisWeek">
+                                0
+                            </strong>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+
+                <div class="admin-panel admin-table-panel">
+
+                    <div class="admin-table-toolbar">
+
+                        <div class="table-search">
+
+                            <i class="fa-solid fa-magnifying-glass"></i>
+
+                            <input
+                                type="search"
+                                id="studentSearch"
+                                placeholder="Search students..."
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="admin-table-wrapper">
+
+                        <table class="admin-table">
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>Student ID</th>
+                                    <th>Student</th>
+                                    <th>Department</th>
+                                    <th>Semester</th>
+                                    <th>Attendance</th>
+                                    <th>CGPA</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody id="studentTableBody"></tbody>
+
+                        </table>
+
+                    </div>
+
+
+                    <div class="admin-table-footer">
+
+                        <span>
+                            All registered students are listed above.
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 EVENTS
+            ================================================== -->
+
+            <section
+                class="admin-section"
+                id="section-events"
+                hidden
+            >
+
+                <div class="admin-section-header">
+
+                    <div>
+
+                        <span class="admin-overline">
+                            Campus Activities
+                        </span>
+
+                        <h2>
+                            Events
+                        </h2>
+
+                        <p>
+                            Create and manage StudentHub events.
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="admin-primary-button"
+                        id="createEventButton"
+                    >
+
+                        <i class="fa-solid fa-plus"></i>
+
+                        Create Event
+
+                    </button>
+
+                </div>
+
+
+                <div class="admin-event-cards">
+
+
+                    <article class="admin-event-card">
+
+                        <div class="admin-event-card-top">
+
+                            <span class="event-category technology">
+                                Technology
+                            </span>
+
+                            <button type="button">
+                                <i class="fa-solid fa-ellipsis"></i>
+                            </button>
+
+                        </div>
+
+                        <div class="event-large-icon">
+
+                            <i class="fa-solid fa-code"></i>
+
+                        </div>
+
+                        <h3>
+                            Tech Hackathon 2026
+                        </h3>
+
+                        <p>
+                            Build innovative solutions with technology.
+                        </p>
+
+                        <div class="event-meta">
+
+                            <span>
+                                <i class="fa-regular fa-calendar"></i>
+                                24 Aug 2026
+                            </span>
+
+                            <span>
+                                <i class="fa-regular fa-clock"></i>
+                                10:00 AM
+                            </span>
+
+                        </div>
+
+                        <div class="event-card-footer">
+
+                            <span>
+                                <strong>642</strong>
+                                registrations
+                            </span>
+
+                            <span class="status active">
+                                Published
+                            </span>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="admin-event-card">
+
+                        <div class="admin-event-card-top">
+
+                            <span class="event-category security">
+                                Security
+                            </span>
+
+                            <button type="button">
+                                <i class="fa-solid fa-ellipsis"></i>
+                            </button>
+
+                        </div>
+
+                        <div class="event-large-icon">
+
+                            <i class="fa-solid fa-shield-halved"></i>
+
+                        </div>
+
+                        <h3>
+                            Cyber Security Workshop
+                        </h3>
+
+                        <p>
+                            Learn practical cybersecurity skills.
+                        </p>
+
+                        <div class="event-meta">
+
+                            <span>
+                                <i class="fa-regular fa-calendar"></i>
+                                28 Aug 2026
+                            </span>
+
+                            <span>
+                                <i class="fa-regular fa-clock"></i>
+                                02:00 PM
+                            </span>
+
+                        </div>
+
+                        <div class="event-card-footer">
+
+                            <span>
+                                <strong>486</strong>
+                                registrations
+                            </span>
+
+                            <span class="status active">
+                                Published
+                            </span>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="admin-event-card">
+
+                        <div class="admin-event-card-top">
+
+                            <span class="event-category ai">
+                                Artificial Intelligence
+                            </span>
+
+                            <button type="button">
+                                <i class="fa-solid fa-ellipsis"></i>
+                            </button>
+
+                        </div>
+
+                        <div class="event-large-icon">
+
+                            <i class="fa-solid fa-robot"></i>
+
+                        </div>
+
+                        <h3>
+                            AI & Robotics Expo
+                        </h3>
+
+                        <p>
+                            Explore the future of AI and robotics.
+                        </p>
+
+                        <div class="event-meta">
+
+                            <span>
+                                <i class="fa-regular fa-calendar"></i>
+                                03 Sep 2026
+                            </span>
+
+                            <span>
+                                <i class="fa-regular fa-clock"></i>
+                                11:00 AM
+                            </span>
+
+                        </div>
+
+                        <div class="event-card-footer">
+
+                            <span>
+                                <strong>372</strong>
+                                registrations
+                            </span>
+
+                            <span class="status active">
+                                Published
+                            </span>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="admin-event-card">
+
+                        <div class="admin-event-card-top">
+
+                            <span class="event-category design">
+                                Design
+                            </span>
+
+                            <button type="button">
+                                <i class="fa-solid fa-ellipsis"></i>
+                            </button>
+
+                        </div>
+
+                        <div class="event-large-icon">
+
+                            <i class="fa-solid fa-palette"></i>
+
+                        </div>
+
+                        <h3>
+                            Design Challenge
+                        </h3>
+
+                        <p>
+                            Showcase your creativity and design skills.
+                        </p>
+
+                        <div class="event-meta">
+
+                            <span>
+                                <i class="fa-regular fa-calendar"></i>
+                                08 Sep 2026
+                            </span>
+
+                            <span>
+                                <i class="fa-regular fa-clock"></i>
+                                10:30 AM
+                            </span>
+
+                        </div>
+
+                        <div class="event-card-footer">
+
+                            <span>
+                                <strong>241</strong>
+                                registrations
+                            </span>
+
+                            <span class="status draft">
+                                Draft
+                            </span>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 ANNOUNCEMENTS
+            ================================================== -->
+
+            <section
+                class="admin-section"
+                id="section-announcements"
+                hidden
+            >
+
+                <div class="admin-section-header">
+
+                    <div>
+
+                        <span class="admin-overline">
+                            Communication
+                        </span>
+
+                        <h2>
+                            Announcements
+                        </h2>
+
+                        <p>
+                            Keep students informed with important updates.
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="admin-primary-button"
+                        id="createAnnouncementButton"
+                    >
+
+                        <i class="fa-solid fa-plus"></i>
+
+                        New Announcement
+
+                    </button>
+
+                </div>
+
+
+                <div class="admin-announcement-list">
+
+
+                    <article class="admin-announcement-card">
+
+                        <div class="announcement-icon green">
+
+                            <i class="fa-solid fa-briefcase"></i>
+
+                        </div>
+
+                        <div class="announcement-content">
+
+                            <div class="announcement-top">
+
+                                <span class="announcement-tag important">
+                                    Important
+                                </span>
+
+                                <time>
+                                    2 hours ago
+                                </time>
+
+                            </div>
+
+                            <h3>
+                                Internship Opportunities 2026
+                            </h3>
+
+                            <p>
+                                New internship opportunities are now available
+                                for eligible students. Check the career section
+                                for complete details.
+                            </p>
+
+                            <div class="announcement-bottom">
+
+                                <span>
+                                    <i class="fa-solid fa-eye"></i>
+                                    842 views
+                                </span>
+
+                                <span>
+                                    <i class="fa-solid fa-user-group"></i>
+                                    All Students
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                        <button
+                            type="button"
+                            class="announcement-menu"
+                        >
+
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+
+                        </button>
+
+                    </article>
+
+
+                    <article class="admin-announcement-card">
+
+                        <div class="announcement-icon blue">
+
+                            <i class="fa-solid fa-calendar"></i>
+
+                        </div>
+
+                        <div class="announcement-content">
+
+                            <div class="announcement-top">
+
+                                <span class="announcement-tag">
+                                    Event
+                                </span>
+
+                                <time>
+                                    Yesterday
+                                </time>
+
+                            </div>
+
+                            <h3>
+                                Tech Hackathon Registration Open
+                            </h3>
+
+                            <p>
+                                Registration for Tech Hackathon 2026 is now open.
+                                Students can register through the events portal.
+                            </p>
+
+                            <div class="announcement-bottom">
+
+                                <span>
+                                    <i class="fa-solid fa-eye"></i>
+                                    621 views
+                                </span>
+
+                                <span>
+                                    <i class="fa-solid fa-user-group"></i>
+                                    All Students
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                        <button
+                            type="button"
+                            class="announcement-menu"
+                        >
+
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+
+                        </button>
+
+                    </article>
+
+
+                    <article class="admin-announcement-card">
+
+                        <div class="announcement-icon orange">
+
+                            <i class="fa-solid fa-building"></i>
+
+                        </div>
+
+                        <div class="announcement-content">
+
+                            <div class="announcement-top">
+
+                                <span class="announcement-tag">
+                                    Campus
+                                </span>
+
+                                <time>
+                                    2 days ago
+                                </time>
+
+                            </div>
+
+                            <h3>
+                                Campus Maintenance Notice
+                            </h3>
+
+                            <p>
+                                The main computer laboratory will remain closed
+                                for scheduled maintenance this weekend.
+                            </p>
+
+                            <div class="announcement-bottom">
+
+                                <span>
+                                    <i class="fa-solid fa-eye"></i>
+                                    418 views
+                                </span>
+
+                                <span>
+                                    <i class="fa-solid fa-user-group"></i>
+                                    All Students
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                        <button
+                            type="button"
+                            class="announcement-menu"
+                        >
+
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+
+                        </button>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 FEEDBACK
+            ================================================== -->
+
+            <section
+                class="admin-section"
+                id="section-feedback"
+                hidden
+            >
+
+                <div class="admin-section-header">
+
+                    <div>
+
+                        <span class="admin-overline">
+                            Student Voice
+                        </span>
+
+                        <h2>
+                            Feedback
+                        </h2>
+
+                        <p>
+                            Review student feedback and improve the portal.
+                        </p>
+
+                    </div>
+
+
+                    <div class="rating-summary">
+
+                        <strong>
+                            4.8
+                        </strong>
+
+                        <div>
+
+                            <div class="stars">
+                                ★★★★★
+                            </div>
+
+                            <span>
+                                Based on 486 responses
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="feedback-stat-grid">
+
+                    <div class="feedback-stat">
+
+                        <strong>
+                            72%
+                        </strong>
+
+                        <span>
+                            Excellent
+                        </span>
+
+                    </div>
+
+                    <div class="feedback-stat">
+
+                        <strong>
+                            18%
+                        </strong>
+
+                        <span>
+                            Good
+                        </span>
+
+                    </div>
+
+                    <div class="feedback-stat">
+
+                        <strong>
+                            7%
+                        </strong>
+
+                        <span>
+                            Average
+                        </span>
+
+                    </div>
+
+                    <div class="feedback-stat">
+
+                        <strong>
+                            3%
+                        </strong>
+
+                        <span>
+                            Poor
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="admin-feedback-list">
+
+
+                    <article class="admin-feedback-card">
+
+                        <div class="feedback-user">
+
+                            <div class="table-avatar">
+                                AS
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Aarav Shah
+                                </strong>
+
+                                <span>
+                                    25IT001
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="feedback-rating">
+
+                            <span>
+                                ★★★★★
+                            </span>
+
+                            <small>
+                                5.0
+                            </small>
+
+                        </div>
+
+
+                        <p>
+                            StudentHub is very useful for finding events and
+                            announcements. The interface is simple and fast.
+                        </p>
+
+
+                        <time>
+                            15 minutes ago
+                        </time>
+
+                    </article>
+
+
+                    <article class="admin-feedback-card">
+
+                        <div class="feedback-user">
+
+                            <div class="table-avatar">
+                                KP
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Kavya Patel
+                                </strong>
+
+                                <span>
+                                    25CS014
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="feedback-rating">
+
+                            <span>
+                                ★★★★★
+                            </span>
+
+                            <small>
+                                5.0
+                            </small>
+
+                        </div>
+
+
+                        <p>
+                            I really like the event registration system.
+                            It makes campus activities much easier to track.
+                        </p>
+
+
+                        <time>
+                            1 hour ago
+                        </time>
+
+                    </article>
+
+
+                    <article class="admin-feedback-card">
+
+                        <div class="feedback-user">
+
+                            <div class="table-avatar">
+                                RP
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Rohan Patel
+                                </strong>
+
+                                <span>
+                                    25EC021
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="feedback-rating">
+
+                            <span>
+                                ★★★★☆
+                            </span>
+
+                            <small>
+                                4.0
+                            </small>
+
+                        </div>
+
+
+                        <p>
+                            Good portal overall. It would be helpful to have
+                            more internship updates in the future.
+                        </p>
+
+
+                        <time>
+                            3 hours ago
+                        </time>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 ANALYTICS
+            ================================================== -->
+
+            <section
+                class="admin-section"
+                id="section-analytics"
+                hidden
+            >
+
+                <div class="admin-section-header">
+
+                    <div>
+
+                        <span class="admin-overline">
+                            Insights
+                        </span>
+
+                        <h2>
+                            Analytics
+                        </h2>
+
+                        <p>
+                            Understand how students use StudentHub.
+                        </p>
+
+                    </div>
+
+
+                    <div class="admin-header-actions">
+
+                        <select
+                            class="admin-select"
+                            id="analyticsPeriod"
+                        >
+
+                            <option>
+                                Last 7 Days
+                            </option>
+
+                            <option selected>
+                                Last 30 Days
+                            </option>
+
+                            <option>
+                                Last 90 Days
+                            </option>
+
+                            <option>
+                                This Year
+                            </option>
+
+                        </select>
+
+
+                        <button
+                            type="button"
+                            class="admin-primary-button"
+                            id="exportAnalytics"
+                        >
+
+                            <i class="fa-solid fa-download"></i>
+
+                            Export
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="admin-stat-grid">
+
+                    <article class="admin-stat-card">
+
+                        <div class="admin-stat-icon green">
+
+                            <i class="fa-solid fa-chart-line"></i>
+
+                        </div>
+
+                        <div class="admin-stat-info">
+
+                            <span>
+                                Page Views
+                            </span>
+
+                            <strong>
+                                28.4K
+                            </strong>
+
+                            <small class="positive">
+                                ↑ 16.8%
+                            </small>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="admin-stat-card">
+
+                        <div class="admin-stat-icon blue">
+
+                            <i class="fa-solid fa-clock"></i>
+
+                        </div>
+
+                        <div class="admin-stat-info">
+
+                            <span>
+                                Avg. Session
+                            </span>
+
+                            <strong>
+                                8m 42s
+                            </strong>
+
+                            <small class="positive">
+                                ↑ 4.2%
+                            </small>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="admin-stat-card">
+
+                        <div class="admin-stat-icon orange">
+
+                            <i class="fa-solid fa-user-group"></i>
+
+                        </div>
+
+                        <div class="admin-stat-info">
+
+                            <span>
+                                New Users
+                            </span>
+
+                            <strong>
+                                186
+                            </strong>
+
+                            <small class="positive">
+                                ↑ 11.4%
+                            </small>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="admin-stat-card">
+
+                        <div class="admin-stat-icon purple">
+
+                            <i class="fa-solid fa-repeat"></i>
+
+                        </div>
+
+                        <div class="admin-stat-info">
+
+                            <span>
+                                Retention
+                            </span>
+
+                            <strong>
+                                78.6%
+                            </strong>
+
+                            <small class="positive">
+                                ↑ 3.8%
+                            </small>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+
+                <div class="analytics-grid">
+
+
+                    <article class="admin-panel analytics-large">
+
+                        <div class="admin-panel-header">
+
+                            <div>
+
+                                <span>
+                                    Engagement
+                                </span>
+
+                                <h3>
+                                    Platform Activity
+                                </h3>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="analytics-bars">
+
+                            <div class="analytics-bar-group">
+
+                                <div class="analytics-bar">
+                                    <span></span>
+                                </div>
+
+                                <label>
+                                    Mon
+                                </label>
+
+                            </div>
+
+
+                            <div class="analytics-bar-group">
+
+                                <div class="analytics-bar">
+                                    <span></span>
+                                </div>
+
+                                <label>
+                                    Tue
+                                </label>
+
+                            </div>
+
+
+                            <div class="analytics-bar-group">
+
+                                <div class="analytics-bar">
+                                    <span></span>
+                                </div>
+
+                                <label>
+                                    Wed
+                                </label>
+
+                            </div>
+
+
+                            <div class="analytics-bar-group">
+
+                                <div class="analytics-bar">
+                                    <span></span>
+                                </div>
+
+                                <label>
+                                    Thu
+                                </label>
+
+                            </div>
+
+
+                            <div class="analytics-bar-group">
+
+                                <div class="analytics-bar">
+                                    <span></span>
+                                </div>
+
+                                <label>
+                                    Fri
+                                </label>
+
+                            </div>
+
+
+                            <div class="analytics-bar-group">
+
+                                <div class="analytics-bar">
+                                    <span></span>
+                                </div>
+
+                                <label>
+                                    Sat
+                                </label>
+
+                            </div>
+
+
+                            <div class="analytics-bar-group">
+
+                                <div class="analytics-bar">
+                                    <span></span>
+                                </div>
+
+                                <label>
+                                    Sun
+                                </label>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="admin-panel">
+
+                        <div class="admin-panel-header">
+
+                            <div>
+
+                                <span>
+                                    Devices
+                                </span>
+
+                                <h3>
+                                    Usage
+                                </h3>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="device-usage">
+
+                            <div class="device-item">
+
+                                <i class="fa-solid fa-laptop"></i>
+
+                                <div>
+
+                                    <div>
+
+                                        <span>
+                                            Desktop
+                                        </span>
+
+                                        <strong>
+                                            48%
+                                        </strong>
+
+                                    </div>
+
+                                    <div class="device-progress">
+
+                                        <span></span>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="device-item">
+
+                                <i class="fa-solid fa-mobile-screen"></i>
+
+                                <div>
+
+                                    <div>
+
+                                        <span>
+                                            Mobile
+                                        </span>
+
+                                        <strong>
+                                            38%
+                                        </strong>
+
+                                    </div>
+
+                                    <div class="device-progress">
+
+                                        <span></span>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="device-item">
+
+                                <i class="fa-solid fa-tablet-screen-button"></i>
+
+                                <div>
+
+                                    <div>
+
+                                        <span>
+                                            Tablet
+                                        </span>
+
+                                        <strong>
+                                            14%
+                                        </strong>
+
+                                    </div>
+
+                                    <div class="device-progress">
+
+                                        <span></span>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 SETTINGS
+            ================================================== -->
+
+            <section
+                class="admin-section"
+                id="section-settings"
+                hidden
+            >
+
+                <div class="admin-section-header">
+
+                    <div>
+
+                        <span class="admin-overline">
+                            Configuration
+                        </span>
+
+                        <h2>
+                            Settings
+                        </h2>
+
+                        <p>
+                            Manage your administrator preferences.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="settings-grid">
+
+
+                    <!-- PROFILE -->
+
+                    <article class="admin-panel settings-panel">
+
+                        <div class="settings-heading">
+
+                            <div class="settings-icon green">
+
+                                <i class="fa-solid fa-user"></i>
+
+                            </div>
+
+                            <div>
+
+                                <h3>
+                                    Admin Profile
+                                </h3>
+
+                                <p>
+                                    Manage your account information.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="settings-form">
+
+                            <div class="settings-avatar">
+
+                                <div>
+                                    <i class="fa-solid fa-user-shield"></i>
+                                </div>
+
+                                <button type="button">
+                                    Change Photo
+                                </button>
+
+                            </div>
+
+
+                            <div class="settings-form-grid">
+
+                                <div class="form-group">
+
+                                    <label>
+                                        Full Name
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        value="Administrator"
+                                    >
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label>
+                                        Username
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        value="admin"
+                                    >
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label>
+                                        Email
+                                    </label>
+
+                                    <input
+                                        type="email"
+                                        value="admin@studenthub.com"
+                                    >
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label>
+                                        Role
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        value="Super Administrator"
+                                        disabled
+                                    >
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- SECURITY -->
+
+                    <article class="admin-panel settings-panel">
+
+                        <div class="settings-heading">
+
+                            <div class="settings-icon blue">
+
+                                <i class="fa-solid fa-shield-halved"></i>
+
+                            </div>
+
+                            <div>
+
+                                <h3>
+                                    Security
+                                </h3>
+
+                                <p>
+                                    Protect your administrator account.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="settings-options">
+
+                            <div class="settings-option">
+
+                                <div>
+
+                                    <strong>
+                                        Two-Factor Authentication
+                                    </strong>
+
+                                    <span>
+                                        Add an extra layer of security.
+                                    </span>
+
+                                </div>
+
+                                <label class="switch">
+
+                                    <input
+                                        type="checkbox"
+                                        checked
+                                    >
+
+                                    <span></span>
+
+                                </label>
+
+                            </div>
+
+
+                            <div class="settings-option">
+
+                                <div>
+
+                                    <strong>
+                                        Login Notifications
+                                    </strong>
+
+                                    <span>
+                                        Get notified about new admin logins.
+                                    </span>
+
+                                </div>
+
+                                <label class="switch">
+
+                                    <input
+                                        type="checkbox"
+                                        checked
+                                    >
+
+                                    <span></span>
+
+                                </label>
+
+                            </div>
+
+
+                            <div class="settings-option">
+
+                                <div>
+
+                                    <strong>
+                                        Session Timeout
+                                    </strong>
+
+                                    <span>
+                                        Automatically logout after inactivity.
+                                    </span>
+
+                                </div>
+
+                                <select class="admin-select">
+
+                                    <option>
+                                        15 minutes
+                                    </option>
+
+                                    <option selected>
+                                        30 minutes
+                                    </option>
+
+                                    <option>
+                                        1 hour
+                                    </option>
+
+                                    <option>
+                                        4 hours
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- APPEARANCE -->
+
+                    <article class="admin-panel settings-panel">
+
+                        <div class="settings-heading">
+
+                            <div class="settings-icon purple">
+
+                                <i class="fa-solid fa-palette"></i>
+
+                            </div>
+
+                            <div>
+
+                                <h3>
+                                    Appearance
+                                </h3>
+
+                                <p>
+                                    Customize your StudentHub admin experience.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="theme-selection">
+
+                            <button
+                                type="button"
+                                class="theme-option selected"
+                                data-theme="green"
+                            >
+
+                                <div class="theme-preview green-preview">
+
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+
+                                </div>
+
+                                <strong>
+                                    Green
+                                </strong>
+
+                                <span>
+                                    Default StudentHub
+                                </span>
+
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="theme-option"
+                                data-theme="blue"
+                            >
+
+                                <div class="theme-preview blue-preview">
+
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+
+                                </div>
+
+                                <strong>
+                                    Blue Dark
+                                </strong>
+
+                                <span>
+                                    Dark mode
+                                </span>
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- SYSTEM -->
+
+                    <article class="admin-panel settings-panel">
+
+                        <div class="settings-heading">
+
+                            <div class="settings-icon orange">
+
+                                <i class="fa-solid fa-sliders"></i>
+
+                            </div>
+
+                            <div>
+
+                                <h3>
+                                    System Preferences
+                                </h3>
+
+                                <p>
+                                    Configure portal behaviour.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="settings-options">
+
+                            <div class="settings-option">
+
+                                <div>
+
+                                    <strong>
+                                        Email Notifications
+                                    </strong>
+
+                                    <span>
+                                        Send important portal updates by email.
+                                    </span>
+
+                                </div>
+
+                                <label class="switch">
+
+                                    <input
+                                        type="checkbox"
+                                        checked
+                                    >
+
+                                    <span></span>
+
+                                </label>
+
+                            </div>
+
+
+                            <div class="settings-option">
+
+                                <div>
+
+                                    <strong>
+                                        Maintenance Mode
+                                    </strong>
+
+                                    <span>
+                                        Temporarily disable student access.
+                                    </span>
+
+                                </div>
+
+                                <label class="switch">
+
+                                    <input
+                                        type="checkbox"
+                                    >
+
+                                    <span></span>
+
+                                </label>
+
+                            </div>
+
+
+                            <div class="settings-option">
+
+                                <div>
+
+                                    <strong>
+                                        Automatic Backups
+                                    </strong>
+
+                                    <span>
+                                        Automatically backup portal data.
+                                    </span>
+
+                                </div>
+
+                                <label class="switch">
+
+                                    <input
+                                        type="checkbox"
+                                        checked
+                                    >
+
+                                    <span></span>
+
+                                </label>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+
+                <div class="settings-save-row">
+
+                    <button
+                        type="button"
+                        class="admin-secondary-button"
+                        id="settingsCancel"
+                    >
+                        Cancel
+                    </button>
+
+                    <button
+                        type="button"
+                        class="admin-primary-button"
+                        id="settingsSave"
+                    >
+
+                        <i class="fa-solid fa-check"></i>
+
+                        Save Changes
+
+                    </button>
+
+                </div>
+
+            </section>
+
+
+        </div>
+
+
+        <!-- =================================================
+             ADMIN FOOTER
+        ================================================== -->
+
+        <footer class="admin-footer">
+
+            <div>
+
+                ©
+                <span data-current-year>
+                    2026
+                </span>
+
+                StudentHub.
+                All rights reserved.
+
+            </div>
+
+
+            <div>
+
+                <span class="footer-status">
+
+                    <i class="fa-solid fa-circle"></i>
+
+                    System Operational
+
+                </span>
+
+                <a href="index.html">
+                    Student Portal
+                </a>
+
+            </div>
+
+        </footer>
+
+    </main>
+
+</section>
+
+
+<!-- =========================================================
+     NOTIFICATION PANEL
+========================================================= -->
+
+<div
+    class="admin-notification-panel"
+    id="adminNotificationPanel"
+    hidden
+>
+
+    <div class="notification-panel-header">
+
+        <div>
+
+            <strong>
+                Notifications
+            </strong>
+
+            <span>
+                Login &amp; registration activity
+            </span>
+
+        </div>
+
+        <button
+            type="button"
+            id="adminNotificationClear"
+            title="Clear all"
+        >
+
+            <i class="fa-solid fa-check-double"></i>
+
+        </button>
+
+    </div>
+
+
+    <ul id="adminNotificationList" class="notification-list">
+    </ul>
+
+</div>
+
+
+<!-- =========================================================
+     ADD STUDENT MODAL
+========================================================= -->
+
+<div
+    class="admin-modal"
+    id="studentModal"
+    hidden
+>
+
+    <div class="admin-modal-overlay" data-modal-close></div>
+
+    <div class="admin-modal-card">
+
+        <div class="admin-modal-header">
+
+            <div>
+
+                <span>
+                    Student Management
+                </span>
+
+                <h3>
+                    Add New Student
+                </h3>
+
+            </div>
+
+            <button
+                type="button"
+                class="modal-close"
+                data-modal-close
+            >
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+
+        <form id="addStudentForm">
+
+            <div class="settings-form-grid">
+
+                <div class="form-group">
+
+                    <label>
+                        Full Name
+                    </label>
+
+                    <input
+                        type="text"
+                        name="name"
+                        placeholder="Enter full name"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Student ID
+                    </label>
+
+                    <input
+                        type="text"
+                        name="id"
+                        placeholder="25IT000"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Email
+                    </label>
+
+                    <input
+                        type="email"
+                        name="email"
+                        placeholder="student@example.com"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Semester
+                    </label>
+
+                    <select
+                        name="semester"
+                        class="admin-select"
+                    >
+
+                        <option value="">
+                            Not set
+                        </option>
+
+                        <option value="1">Semester 1</option>
+                        <option value="2">Semester 2</option>
+                        <option value="3">Semester 3</option>
+                        <option value="4">Semester 4</option>
+                        <option value="5">Semester 5</option>
+                        <option value="6">Semester 6</option>
+                        <option value="7">Semester 7</option>
+                        <option value="8">Semester 8</option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Temporary Password
+                    </label>
+
+                    <input
+                        type="text"
+                        name="password"
+                        placeholder="Leave blank for changeme123"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <p class="admin-form-note">
+                The department is detected automatically from the Student ID.
+                The student can complete the rest of their profile after signing in.
+            </p>
+
+            <div class="form-message" id="addStudentMessage" role="status" aria-live="polite"></div>
+
+
+            <div class="admin-modal-actions">
+
+                <button
+                    type="button"
+                    class="admin-secondary-button modal-cancel"
+                    data-modal-close
+                >
+                    Cancel
+                </button>
+
+                <button
+                    type="submit"
+                    class="admin-primary-button"
+                >
+
+                    <i class="fa-solid fa-user-plus"></i>
+
+                    Add Student
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     EDIT STUDENT MODAL
+========================================================= -->
+
+<div
+    class="admin-modal"
+    id="editStudentModal"
+    hidden
+>
+
+    <div class="admin-modal-overlay" data-modal-close></div>
+
+    <div class="admin-modal-card">
+
+        <div class="admin-modal-header">
+
+            <div>
+
+                <span>
+                    Student Records
+                </span>
+
+                <h3 data-edit-title>
+                    Edit Student
+                </h3>
+
+            </div>
+
+            <button
+                type="button"
+                class="modal-close"
+                data-modal-close
+            >
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+
+        <form id="editStudentForm">
+
+            <div class="settings-form-grid">
+
+                <div class="form-group">
+                    <label>Attendance (%)</label>
+                    <input type="number" name="attendance" min="0" max="100" placeholder="0 – 100">
+                </div>
+
+                <div class="form-group">
+                    <label>CGPA (out of 10)</label>
+                    <input type="number" name="cgpa" min="0" max="10" step="0.01" placeholder="0.00 – 10.00">
+                </div>
+
+                <div class="form-group">
+                    <label>Credits Earned</label>
+                    <input type="number" name="credits" min="0" placeholder="e.g. 24">
+                </div>
+
+                <div class="form-group">
+                    <label>Class Rank</label>
+                    <input type="text" name="rank" placeholder="e.g. 5 / 60">
+                </div>
+
+                <div class="form-group">
+                    <label>Semester</label>
+                    <select name="semester" class="admin-select">
+                        <option value="">Not set</option>
+                        <option value="1">Semester 1</option>
+                        <option value="2">Semester 2</option>
+                        <option value="3">Semester 3</option>
+                        <option value="4">Semester 4</option>
+                        <option value="5">Semester 5</option>
+                        <option value="6">Semester 6</option>
+                        <option value="7">Semester 7</option>
+                        <option value="8">Semester 8</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Faculty Advisor</label>
+                    <input type="text" name="advisor" placeholder="Advisor name">
+                </div>
+
+                <div class="form-group">
+                    <label>Status</label>
+                    <select name="status" class="admin-select">
+                        <option value="active">Active</option>
+                        <option value="inactive">Inactive</option>
+                    </select>
+                </div>
+
+            </div>
+
+
+            <div class="form-group">
+                <label>Subjects &amp; Attendance</label>
+                <textarea name="subjects" rows="3" placeholder="Maths:88, Physics:76, Programming:92"></textarea>
+                <small class="admin-form-note">Format: Subject:percent, separated by commas.</small>
+            </div>
+
+
+            <div class="admin-modal-actions">
+
+                <button
+                    type="button"
+                    class="admin-secondary-button"
+                    data-modal-close
+                >
+                    Cancel
+                </button>
+
+                <button
+                    type="submit"
+                    class="admin-primary-button"
+                >
+
+                    <i class="fa-solid fa-floppy-disk"></i>
+
+                    Save Changes
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     CREATE EVENT MODAL
+========================================================= -->
+
+<div
+    class="admin-modal"
+    id="eventModal"
+    hidden
+>
+
+    <div class="admin-modal-overlay" data-modal-close></div>
+
+    <div class="admin-modal-card">
+
+        <div class="admin-modal-header">
+
+            <div>
+
+                <span>
+                    Event Management
+                </span>
+
+                <h3>
+                    Create Event
+                </h3>
+
+            </div>
+
+            <button
+                type="button"
+                class="modal-close"
+                data-modal-close
+            >
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+
+        <form id="createEventForm">
+
+            <div class="settings-form-grid">
+
+                <div class="form-group">
+
+                    <label>
+                        Event Name
+                    </label>
+
+                    <input
+                        type="text"
+                        placeholder="Enter event name"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Category
+                    </label>
+
+                    <select
+                        class="admin-select"
+                        required
+                    >
+
+                        <option value="">
+                            Select Category
+                        </option>
+
+                        <option>
+                            Technology
+                        </option>
+
+                        <option>
+                            Workshop
+                        </option>
+
+                        <option>
+                            Cultural
+                        </option>
+
+                        <option>
+                            Sports
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Date
+                    </label>
+
+                    <input
+                        type="date"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Time
+                    </label>
+
+                    <input
+                        type="time"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Description
+                </label>
+
+                <textarea
+                    rows="4"
+                    placeholder="Enter event description"
+                ></textarea>
+
+            </div>
+
+
+            <div class="admin-modal-actions">
+
+                <button
+                    type="button"
+                    class="admin-secondary-button modal-cancel"
+                    data-modal-close
+                >
+                    Cancel
+                </button>
+
+                <button
+                    type="submit"
+                    class="admin-primary-button"
+                >
+
+                    <i class="fa-solid fa-calendar-plus"></i>
+
+                    Create Event
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     ANNOUNCEMENT MODAL
+========================================================= -->
+
+<div
+    class="admin-modal"
+    id="announcementModal"
+    hidden
+>
+
+    <div class="admin-modal-overlay" data-modal-close></div>
+
+    <div class="admin-modal-card">
+
+        <div class="admin-modal-header">
+
+            <div>
+
+                <span>
+                    Communication
+                </span>
+
+                <h3>
+                    New Announcement
+                </h3>
+
+            </div>
+
+            <button
+                type="button"
+                class="modal-close"
+                data-modal-close
+            >
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+
+        <form id="announcementForm">
+
+            <div class="form-group">
+
+                <label>
+                    Announcement Title
+                </label>
+
+                <input
+                    type="text"
+                    placeholder="Enter announcement title"
+                    required
+                >
+
+            </div>
+
+
+            <div class="settings-form-grid">
+
+                <div class="form-group">
+
+                    <label>
+                        Category
+                    </label>
+
+                    <select
+                        class="admin-select"
+                        required
+                    >
+
+                        <option>
+                            Important
+                        </option>
+
+                        <option>
+                            Event
+                        </option>
+
+                        <option>
+                            Academic
+                        </option>
+
+                        <option>
+                            Campus
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Audience
+                    </label>
+
+                    <select
+                        class="admin-select"
+                    >
+
+                        <option>
+                            All Students
+                        </option>
+
+                        <option>
+                            IT Students
+                        </option>
+
+                        <option>
+                            CSE Students
+                        </option>
+
+                        <option>
+                            Final Year
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Message
+                </label>
+
+                <textarea
+                    rows="6"
+                    placeholder="Write your announcement..."
+                    required
+                ></textarea>
+
+            </div>
+
+
+            <div class="admin-modal-actions">
+
+                <button
+                    type="button"
+                    class="admin-secondary-button modal-cancel"
+                    data-modal-close
+                >
+                    Cancel
+                </button>
+
+                <button
+                    type="submit"
+                    class="admin-primary-button"
+                >
+
+                    <i class="fa-solid fa-bullhorn"></i>
+
+                    Publish
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     TOAST
+========================================================= -->
+
+<div
+    class="admin-toast-box"
+    id="adminToast"
+    role="status"
+    aria-live="polite"
+></div>
+
+
+<!-- =========================================================
+     EXTERNAL JAVASCRIPT
+========================================================= -->
+
+<script
+    src="../js/script.js"
+></script>
+
+</body>
+</html>

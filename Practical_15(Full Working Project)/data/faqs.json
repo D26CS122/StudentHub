@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "question": "How do I register?",
+    "answer": "Use the registration page and verify your details.",
+    "category": "General"
+  },
+  {
+    "id": 2,
+    "question": "How do I log in?",
+    "answer": "Use your registered email and password.",
+    "category": "General"
+  },
+  {
+    "id": 3,
+    "question": "How do I reset a password?",
+    "answer": "Contact the portal administrator.",
+    "category": "General"
+  },
+  {
+    "id": 4,
+    "question": "Who can manage events?",
+    "answer": "Only users with the administrator role.",
+    "category": "General"
+  },
+  {
+    "id": 5,
+    "question": "How do I join an event?",
+    "answer": "Open an event and select register when signed in.",
+    "category": "General"
+  },
+  {
+    "id": 6,
+    "question": "Can I edit my profile?",
+    "answer": "Open Profile after signing in.",
+    "category": "General"
+  },
+  {
+    "id": 7,
+    "question": "How are passwords stored?",
+    "answer": "Passwords are stored as secure hashes.",
+    "category": "General"
+  },
+  {
+    "id": 8,
+    "question": "What is StudentHub?",
+    "answer": "A portal for student information and campus events.",
+    "category": "General"
+  },
+  {
+    "id": 9,
+    "question": "Can I search events?",
+    "answer": "Yes, use the event search and category filters.",
+    "category": "General"
+  },
+  {
+    "id": 10,
+    "question": "Who can view audit logs?",
+    "answer": "Administrators only.",
+    "category": "General"
+  },
+  {
+    "id": 11,
+    "question": "How do I contact support?",
+    "answer": "Use the contact page.",
+    "category": "General"
+  },
+  {
+    "id": 12,
+    "question": "What if login fails?",
+    "answer": "Check your email and password and try again.",
+    "category": "General"
+  },
+  {
+    "id": 13,
+    "question": "Can I cancel event registration?",
+    "answer": "Use your event registration page if cancellation is enabled.",
+    "category": "General"
+  },
+  {
+    "id": 14,
+    "question": "Is the site mobile friendly?",
+    "answer": "The layout adapts to smaller screens.",
+    "category": "General"
+  },
+  {
+    "id": 15,
+    "question": "Where can I find help?",
+    "answer": "See this FAQ or contact the portal team.",
+    "category": "General"
+  }
+]

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="refresh" content="0; url=dashboard.php">
+  <script>window.location.replace("dashboard.php");</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Student Dashboard | StudentHub</title>
+
+  <meta name="description"
+        content="Your StudentHub dashboard — attendance, CGPA, assignments, today's schedule, events and achievements for CHARUSAT students.">
+
+  <!-- Instant redirect to protected PHP dashboard when served via web server -->
+  <script>
+    if (window.location.protocol.indexOf('http') === 0) {
+      window.location.replace('dashboard.php');
+    }
+  </script>
+  <noscript>
+    <meta http-equiv="refresh" content="0;url=dashboard.php">
+  </noscript>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Galada&display=swap"
+        rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+
+<body class="theme-teal dashboard-page" data-php-session="true">
+
+
+  <!-- ================= FLOATING BACKGROUND ================= -->
+
+  <div class="bg-animation">
+    <span class="ball ball1"></span>
+    <span class="ball ball2"></span>
+    <span class="ball ball3"></span>
+    <span class="ball ball4"></span>
+    <span class="ball ball5"></span>
+  </div>
+
+
+  <!-- ================= HEADER ================= -->
+
+  <header class="header">
+
+    <div class="container">
+
+      <div class="header-wrapper">
+
+        <!-- Logo -->
+        <a href="index.php" class="logo">
+          <div class="logo-box">
+            <i class="fa-solid fa-graduation-cap"></i>
+          </div>
+          <div class="logo-text">
+            <h2>StudentHub</h2>
+            <span>CHARUSAT Student Portal</span>
+          </div>
+        </a>
+
+        <!-- Navigation -->
+        <nav class="navbar">
+          <a href="index.php">Home</a>
+          <a href="about.php">About</a>
+          <a href="events.php">Events</a>
+          <a href="dashboard.php" class="active">Dashboard</a>
+          <a href="profile.php">Profile</a>
+          <a href="faq.php">FAQ</a>
+          <a href="feedback.php">Feedback</a>
+          <a href="contact.php">Contact</a>
+          <a href="login.php">Login</a>
+          <a href="register.php">Register</a>
+        </nav>
+
+        <!-- Right side -->
+        <div class="header-right">
+
+          <div class="theme-switcher">
+            <button class="theme-btn active" data-theme="teal" type="button">
+              <span class="dot teal"></span>
+              Campus Teal
+            </button>
+            <button class="theme-btn" data-theme="blue" type="button">
+              <span class="dot blue"></span>
+              Midnight Blue
+            </button>
+          </div>
+
+          <a href="dashboard.php" class="btn btn-primary" style="padding:0.45rem 1rem;font-size:0.85rem;">
+            <i class="fa-solid fa-gauge-high"></i>
+            Live PHP Dashboard
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </header>
+
+  <main class="dashboard-shell" style="padding: 4rem 1rem; text-align: center;">
+    <div class="container">
+      <div class="dash-panel" style="max-width: 600px; margin: 0 auto; padding: 2.5rem;">
+        <i class="fa-solid fa-circle-notch fa-spin" style="font-size: 2.5rem; color: #0d9488; margin-bottom: 1.25rem;"></i>
+        <h2>Connecting to Protected Dashboard...</h2>
+        <p style="color: #64748b; margin: 1rem 0 1.5rem;">If you are not automatically redirected, please click the button below.</p>
+        <a href="dashboard.php" class="btn btn-primary btn-large">
+          <i class="fa-solid fa-right-to-bracket"></i> Open Dashboard
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+
+  <footer class="footer">
+
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+          <a href="index.php" class="logo">
+            <div class="logo-box">
+              <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+            <div class="logo-text">
+              <h2>StudentHub</h2>
+              <span>CHARUSAT Student Portal</span>
+            </div>
+          </a>
+          <p>
+            The digital campus companion for CHARUSAT students to manage
+            academics, events, profiles and campus life.
+          </p>
+        </div>
+
+        <div>
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="about.php">About</a></li>
+            <li><a href="events.php">Events</a></li>
+            <li><a href="dashboard.php">Dashboard</a></li>
+            <li><a href="profile.php">Profile</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Support</h4>
+          <ul>
+            <li><a href="faq.php">FAQ</a></li>
+            <li><a href="feedback.php">Feedback</a></li>
+            <li><a href="contact.php">Contact</a></li>
+            <li><a href="admin_dashboard.php">Admin</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Student Information</h4>
+          <p><strong>Name:</strong> Tirth Ladani</p>
+          <p><strong>ID:</strong> 25IT049</p>
+          <p><strong>Email:</strong> 25it049@charusat.edu.in</p>
+          <p><strong>Department:</strong> Information Technology</p>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>© <span data-year></span> StudentHub — CHARUSAT. Designed for academic excellence.</p>
+      </div>
+
+    </div>
+
+  </footer>
+
+  <script src="js/script.js"></script>
+
+</body>
+
+</html>

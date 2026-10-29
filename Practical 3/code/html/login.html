@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Login | StudentHub</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    
+    <style>
+        /* Floating theme button for pages without navbar */
+        .floating-theme-btn {
+            position: absolute;
+            top: 1.5rem;
+            right: 2rem;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(5px);
+            padding: 0.5rem;
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--border-color);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Theme Switcher (Practical 4) -->
+    <button id="theme-toggle" class="theme-btn floating-theme-btn" aria-label="Toggle Dark Mode">
+        <i class="fa-solid fa-moon"></i>
+    </button>
+
+    <!-- ===================== LOGIN CONTAINER ===================== -->
+
+    <main class="login-page">
+
+        <section class="login-container">
+
+            <!-- Left Side -->
+
+            <div class="login-left">
+
+                <div class="login-content">
+
+                    <h1>StudentHub</h1>
+
+                    <h2>Welcome Back!</h2>
+
+                    <p>
+                        Login to access your dashboard, attendance,
+                        assignments, study materials, timetable and profile.
+                    </p>
+
+                    <img src="images/login.png"
+                        alt="Student Login Illustration">
+
+                </div>
+
+            </div>
+
+            <!-- Right Side -->
+
+            <div class="login-right">
+
+                <form action="dashboard.html" method="post" class="login-form" id="student-login-form">
+
+                    <h2>Student Login</h2>
+
+                    <p>
+                        Sign in using your Student ID and Password.
+                    </p>
+
+                    <!-- Student ID -->
+
+                    <div class="input-box">
+
+                        <label for="studentid">
+                            Student ID
+                        </label>
+
+                        <div class="input-field">
+
+                            <i class="fa-solid fa-id-card"></i>
+
+                            <input
+                                type="text"
+                                id="studentid"
+                                name="studentid"
+                                placeholder="Enter Student ID"
+                                required>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Password -->
+
+                    <div class="input-box">
+
+                        <label for="password">
+                            Password
+                        </label>
+
+                        <div class="input-field">
+
+                            <i class="fa-solid fa-lock"></i>
+
+                            <input
+                                type="password"
+                                id="password"
+                                name="password"
+                                placeholder="Enter Password"
+                                required>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Options -->
+
+                    <div class="login-options">
+
+                        <label>
+
+                            <input type="checkbox" id="remember-me">
+
+                            Remember Me
+
+                        </label>
+
+                        <a href="#">
+                            Forgot Password?
+                        </a>
+
+                    </div>
+
+                    <!-- Login Button -->
+
+                    <button type="submit" class="login-btn btn-primary">
+
+                        <i class="fa-solid fa-right-to-bracket"></i>
+
+                        Login
+
+                    </button>
+
+                    <!-- Divider -->
+
+                    <div class="divider">
+
+                        <span>OR</span>
+
+                    </div>
+
+                    <!-- Google Login -->
+
+                    <button type="button" class="google-btn btn-secondary">
+
+                        <i class="fa-brands fa-google"></i>
+
+                        Continue with Google
+
+                    </button>
+
+                    <!-- Register -->
+
+                    <div class="register-link">
+
+                        <p>
+
+                            Don't have an account?
+
+                            <a href="register.html">
+
+                                Register
+
+                            </a>
+
+                        </p>
+
+                    </div>
+
+                    <!-- Home -->
+
+                    <div class="back-home">
+
+                        <a href="index.html">
+
+                            <i class="fa-solid fa-house"></i>
+
+                            Back to Home
+
+                        </a>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Global Script File -->
+    <script src="js/script.js"></script>
+
+    <!-- Page Specific Script for Practical 4 Event Handling -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const loginForm = document.getElementById('student-login-form');
+            
+            // Prefill if remembered
+            if(localStorage.getItem('savedStudentId')) {
+                document.getElementById('studentid').value = localStorage.getItem('savedStudentId');
+                document.getElementById('remember-me').checked = true;
+            }
+
+            if(loginForm) {
+                loginForm.addEventListener('submit', (e) => {
+                    // Prevent actual submission for the frontend practical demo
+                    e.preventDefault(); 
+                    const studentId = document.getElementById('studentid').value;
+                    const rememberMe = document.getElementById('remember-me').checked;
+                    
+                    if(rememberMe) {
+                        localStorage.setItem('savedStudentId', studentId);
+                    } else {
+                        localStorage.removeItem('savedStudentId');
+                    }
+                    
+                    alert(`Welcome back, ${studentId}! Redirecting to dashboard...`);
+                    // Simulate redirect
+                    window.location.href = "dashboard.html";
+                });
+            }
+        });
+    </script>
+
+</body>
+</html>

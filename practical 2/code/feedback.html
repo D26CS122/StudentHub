@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback | StudentHub</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="page-header">
+
+        <div class="logo">
+            <h2>StudentHub</h2>
+        </div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="contact.html">Contact</a>
+            <a href="feedback.html" class="active">Feedback</a>
+        </nav>
+
+    </header>
+
+    <!-- ================= FEEDBACK SECTION ================= -->
+
+    <main class="feedback-page">
+
+        <section class="feedback-container">
+
+            <div class="feedback-info">
+
+                <i class="fa-solid fa-comments"></i>
+
+                <h1>We Value Your Feedback</h1>
+
+                <p>
+                    Your suggestions help us improve StudentHub.
+                    Please share your experience, report issues,
+                    or suggest new features.
+                </p>
+
+            </div>
+
+            <div class="feedback-form">
+
+                <form action="#" method="post">
+
+                    <h2>Submit Feedback</h2>
+
+                    <!-- Full Name -->
+
+                    <div class="input-box">
+
+                        <label for="fullname">Full Name</label>
+
+                        <input
+                            type="text"
+                            id="fullname"
+                            name="fullname"
+                            placeholder="Enter your full name"
+                            required>
+
+                    </div>
+
+                    <!-- Email -->
+
+                    <div class="input-box">
+
+                        <label for="email">Email Address</label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="Enter your email"
+                            required>
+
+                    </div>
+
+                    <!-- User Role -->
+
+                    <div class="input-box">
+
+                        <label for="role">User Role</label>
+
+                        <select id="role" name="role" required>
+
+                            <option value="">Select Role</option>
+                            <option>Student</option>
+                            <option>Faculty</option>
+                            <option>Administrator</option>
+
+                        </select>
+
+                    </div>
+
+                    <!-- Rating -->
+
+                    <div class="input-box">
+
+                        <label>Overall Rating</label>
+
+                        <div class="rating">
+
+                            <label><input type="radio" name="rating" value="5"> ⭐⭐⭐⭐⭐ Excellent</label><br>
+
+                            <label><input type="radio" name="rating" value="4"> ⭐⭐⭐⭐ Very Good</label><br>
+
+                            <label><input type="radio" name="rating" value="3"> ⭐⭐⭐ Good</label><br>
+
+                            <label><input type="radio" name="rating" value="2"> ⭐⭐ Fair</label><br>
+
+                            <label><input type="radio" name="rating" value="1"> ⭐ Poor</label>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Feedback Type -->
+
+                    <div class="input-box">
+
+                        <label for="type">Feedback Type</label>
+
+                        <select id="type" name="type" required>
+
+                            <option value="">Select Type</option>
+                            <option>Suggestion</option>
+                            <option>Complaint</option>
+                            <option>Bug Report</option>
+                            <option>Feature Request</option>
+                            <option>General Feedback</option>
+
+                        </select>
+
+                    </div>
+
+                    <!-- Message -->
+
+                    <div class="input-box">
+
+                        <label for="message">Your Feedback</label>
+
+                        <textarea
+                            id="message"
+                            name="message"
+                            rows="6"
+                            placeholder="Write your feedback here..."
+                            required></textarea>
+
+                    </div>
+
+                    <!-- Recommend -->
+
+                    <div class="input-box">
+
+                        <label>
+
+                            <input type="checkbox">
+
+                            I would recommend StudentHub to others.
+
+                        </label>
+
+                    </div>
+
+                    <!-- Buttons -->
+
+                    <div class="button-group">
+
+                        <button type="submit" class="submit-btn">
+
+                            <i class="fa-solid fa-paper-plane"></i>
+
+                            Submit Feedback
+
+                        </button>
+
+                        <button type="reset" class="reset-btn">
+
+                            <i class="fa-solid fa-rotate-left"></i>
+
+                            Reset
+
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+            &copy; 2026 StudentHub. All Rights Reserved.
+        </p>
+
+    </footer>
+
+</body>
+</html>

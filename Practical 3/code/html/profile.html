@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Profile | StudentHub</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+        
+    <style>
+        .profile-page input:disabled, 
+        .profile-page select:disabled, 
+        .profile-page textarea:disabled {
+            background-color: var(--border-color);
+            color: var(--text-muted);
+            cursor: not-allowed;
+            opacity: 0.7;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="top-header navbar">
+
+        <div class="logo">
+            <h2>StudentHub</h2>
+        </div>
+
+        <nav style="display:flex; align-items:center; gap: 1.5rem;">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="attendance.html">Attendance</a>
+            <a href="assignments.html">Assignments</a>
+            <a href="profile.html" class="active" style="color: var(--primary-color); font-weight: bold;">Profile</a>
+            <a href="index.html">Logout</a>
+            
+            <!-- Theme Switcher (Practical 4) -->
+            <button id="theme-toggle" class="theme-btn" aria-label="Toggle Dark Mode" style="background:transparent; border:none; font-size:1.2rem; cursor:pointer; color:inherit;">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+        </nav>
+
+    </header>
+
+    <!-- ================= PROFILE SECTION ================= -->
+
+    <main class="profile-page section">
+
+        <section class="profile-container" style="display: grid; grid-template-columns: 300px 1fr; gap: 3rem;">
+
+            <!-- Profile Card -->
+
+            <aside class="profile-card" style="background: var(--surface-color); padding: 2rem; border-radius: 1rem; box-shadow: var(--shadow-md); text-align: center; height: fit-content;">
+
+                <img src="images/profile.jpg"
+                    alt="Student Profile Photo"
+                    class="profile-image" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; margin-bottom: 1rem; border: 4px solid var(--primary-color);">
+
+                <h2 style="margin-bottom: 0.5rem;">Yug Makadiya</h2>
+
+                <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Computer Science Student</p>
+
+                <button id="edit-profile-btn" class="btn-outline full-width">
+                    <i class="fa-solid fa-pen"></i> Edit Profile
+                </button>
+
+            </aside>
+
+            <!-- Profile Details -->
+
+            <section class="profile-details">
+
+                <h1 style="font-size: 2.5rem; margin-bottom: 2rem;">Student Profile</h1>
+
+                <!-- Form wrapper for JS interaction -->
+                <form id="profile-form">
+                    
+                    <!-- Personal Information -->
+
+                    <div class="profile-box" style="background: var(--surface-color); padding: 2rem; border-radius: 1rem; box-shadow: var(--shadow-sm); margin-bottom: 2rem;">
+
+                        <h3 style="margin-bottom: 1.5rem; color: var(--primary-color); border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">
+                            <i class="fa-solid fa-user" style="margin-right: 0.5rem;"></i>
+                            Personal Information
+                        </h3>
+
+                        <div class="info-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+
+                            <div class="form-group">
+                                <label>Full Name</label>
+                                <input type="text" class="form-input" value="Yug Makadiya" disabled>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Enrollment No.</label>
+                                <input type="text" class="form-input" value="22CS001" disabled>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Email</label>
+                                <input type="email" class="form-input" value="yug@example.com" disabled>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Phone</label>
+                                <input type="tel" class="form-input" value="+91 9876543210" disabled>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Date of Birth</label>
+                                <input type="date" class="form-input" disabled>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Gender</label>
+                                <select class="form-input" disabled>
+                                    <option selected>Male</option>
+                                    <option>Female</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Academic Information -->
+
+                    <div class="profile-box" style="background: var(--surface-color); padding: 2rem; border-radius: 1rem; box-shadow: var(--shadow-sm); margin-bottom: 2rem;">
+
+                        <h3 style="margin-bottom: 1.5rem; color: var(--primary-color); border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">
+                            <i class="fa-solid fa-graduation-cap" style="margin-right: 0.5rem;"></i>
+                            Academic Information
+                        </h3>
+
+                        <div class="info-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+
+                            <div class="form-group">
+                                <label>Department</label>
+                                <input type="text" value="Computer Science" disabled>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Semester</label>
+                                <input type="text" value="Semester 5" disabled>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Division</label>
+                                <input type="text" value="A" disabled>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Roll Number</label>
+                                <input type="text" value="122" disabled>
+                            </div>
+
+                            <div class="form-group">
+                                <label>CGPA</label>
+                                <input type="text" value="9.69" disabled>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Academic Year</label>
+                                <input type="text" value="2026-2027" disabled>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Address -->
+
+                    <div class="profile-box" style="background: var(--surface-color); padding: 2rem; border-radius: 1rem; box-shadow: var(--shadow-sm); margin-bottom: 2rem;">
+
+                        <h3 style="margin-bottom: 1.5rem; color: var(--primary-color); border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">
+                            <i class="fa-solid fa-location-dot" style="margin-right: 0.5rem;"></i>
+                            Address
+                        </h3>
+
+                        <div class="form-group">
+                            <textarea rows="4"
+                                class="form-input"
+                                placeholder="Enter your address" style="width: 100%; padding: 1rem; border-radius: 0.5rem; border: 1px solid var(--border-color);" disabled>Rajkot, Gujarat, India</textarea>
+                        </div>
+
+                    </div>
+
+                    <!-- Buttons -->
+
+                    <div class="profile-buttons" style="display: flex; gap: 1rem; justify-content: flex-end; display: none;" id="action-buttons">
+
+                        <button type="submit" class="btn-primary">
+                            <i class="fa-solid fa-floppy-disk"></i>
+                            Save Changes
+                        </button>
+
+                        <button type="button" id="cancel-btn" class="btn-secondary">
+                            <i class="fa-solid fa-xmark"></i>
+                            Cancel
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </section>
+
+        </section>
+
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer style="text-align: center; padding: 2rem; background: var(--surface-color); margin-top: 3rem;">
+
+        <p>
+            &copy; 2026 StudentHub. All Rights Reserved.
+        </p>
+
+    </footer>
+
+    <!-- Global JS -->
+    <script src="js/script.js"></script>
+
+    <!-- Page Specific Script for Practical 4 DOM Manipulation -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const editBtn = document.getElementById('edit-profile-btn');
+            const cancelBtn = document.getElementById('cancel-btn');
+            const profileForm = document.getElementById('profile-form');
+            const actionButtons = document.getElementById('action-buttons');
+            // Select only inputs we want to be editable (Personal info and Address, but not Academic info)
+            const editableInputs = document.querySelectorAll('.form-input');
+
+            // Enable editing
+            if(editBtn) {
+                editBtn.addEventListener('click', () => {
+                    editableInputs.forEach(input => {
+                        input.disabled = false;
+                        input.style.backgroundColor = 'var(--bg-color)'; // visual cue
+                    });
+                    
+                    actionButtons.style.display = 'flex'; // Show save/cancel buttons
+                    editBtn.style.display = 'none'; // Hide edit button
+                });
+            }
+
+            // Cancel editing
+            if(cancelBtn) {
+                cancelBtn.addEventListener('click', () => {
+                    editableInputs.forEach(input => {
+                        input.disabled = true;
+                        input.style.backgroundColor = ''; // revert visual cue
+                    });
+                    
+                    actionButtons.style.display = 'none'; // Hide save/cancel buttons
+                    editBtn.style.display = 'block'; // Show edit button
+                });
+            }
+
+            // Save changes handling
+            if(profileForm) {
+                profileForm.addEventListener('submit', (e) => {
+                    e.preventDefault(); // Prevent actual submission
+                    
+                    // Re-disable inputs
+                    editableInputs.forEach(input => {
+                        input.disabled = true;
+                        input.style.backgroundColor = ''; 
+                    });
+                    
+                    actionButtons.style.display = 'none'; // Hide save/cancel buttons
+                    editBtn.style.display = 'block'; // Show edit button
+                    
+                    // Notification Alert
+                    alert('Profile updated successfully!');
+                });
+            }
+        });
+    </script>
+
+</body>
+</html>

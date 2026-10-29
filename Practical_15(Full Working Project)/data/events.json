@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "title": "Web Development Workshop",
+    "category": "Festival",
+    "date": "2027-02-02",
+    "venue": "Main Auditorium",
+    "status": "published"
+  },
+  {
+    "id": 2,
+    "title": "TechFest Opening",
+    "category": "Competition",
+    "date": "2027-03-03",
+    "venue": "Innovation Centre",
+    "status": "published"
+  },
+  {
+    "id": 3,
+    "title": "Hackathon 2027",
+    "category": "Seminar",
+    "date": "2027-04-04",
+    "venue": "CS Lab 1",
+    "status": "published"
+  },
+  {
+    "id": 4,
+    "title": "Career Guidance",
+    "category": "Workshop",
+    "date": "2027-05-05",
+    "venue": "Main Auditorium",
+    "status": "published"
+  },
+  {
+    "id": 5,
+    "title": "Open Source Day",
+    "category": "Workshop",
+    "date": "2027-06-06",
+    "venue": "Innovation Centre",
+    "status": "published"
+  },
+  {
+    "id": 6,
+    "title": "AI Essentials",
+    "category": "Festival",
+    "date": "2027-01-07",
+    "venue": "CS Lab 1",
+    "status": "published"
+  },
+  {
+    "id": 7,
+    "title": "Cyber Safety Clinic",
+    "category": "Competition",
+    "date": "2027-02-08",
+    "venue": "Main Auditorium",
+    "status": "published"
+  },
+  {
+    "id": 8,
+    "title": "Design Sprint",
+    "category": "Seminar",
+    "date": "2027-03-09",
+    "venue": "Innovation Centre",
+    "status": "published"
+  },
+  {
+    "id": 9,
+    "title": "Alumni Connect",
+    "category": "Workshop",
+    "date": "2027-04-10",
+    "venue": "CS Lab 1",
+    "status": "published"
+  },
+  {
+    "id": 10,
+    "title": "Cloud Computing 101",
+    "category": "Workshop",
+    "date": "2027-05-11",
+    "venue": "Main Auditorium",
+    "status": "published"
+  },
+  {
+    "id": 11,
+    "title": "Robotics Showcase",
+    "category": "Festival",
+    "date": "2027-06-12",
+    "venue": "Innovation Centre",
+    "status": "published"
+  },
+  {
+    "id": 12,
+    "title": "Data Day",
+    "category": "Competition",
+    "date": "2027-01-13",
+    "venue": "CS Lab 1",
+    "status": "published"
+  },
+  {
+    "id": 13,
+    "title": "Green Campus Drive",
+    "category": "Seminar",
+    "date": "2027-02-14",
+    "venue": "Main Auditorium",
+    "status": "published"
+  },
+  {
+    "id": 14,
+    "title": "Project Expo",
+    "category": "Workshop",
+    "date": "2027-03-15",
+    "venue": "Innovation Centre",
+    "status": "published"
+  },
+  {
+    "id": 15,
+    "title": "Student Wellness Hour",
+    "category": "Workshop",
+    "date": "2027-04-16",
+    "venue": "CS Lab 1",
+    "status": "published"
+  }
+]

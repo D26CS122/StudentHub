@@ -1,0 +1,1 @@
+</main><footer class="p15-footer">StudentHub · ITUE203 Web Development Frameworks</footer><script src="<?= sh_e($assetPrefix ?? '') ?>assets/js/practical15.js" defer></script></body></html>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | StudentHub</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="admin-body">
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar" id="sidebar">
+
+        <div class="logo">
+            <h2>StudentHub</h2>
+        </div>
+
+        <ul>
+            <li class="active">
+                <a href="admin.html">
+                    <i class="fa-solid fa-gauge-high"></i> Dashboard
+                </a>
+            </li>
+            <li>
+                <a href="manage-students.html">
+                    <i class="fa-solid fa-user-graduate"></i> Students
+                </a>
+            </li>
+            <li>
+                <a href="manage-faculty.html">
+                    <i class="fa-solid fa-chalkboard-user"></i> Faculty
+                </a>
+            </li>
+            <li>
+                <a href="departments.html">
+                    <i class="fa-solid fa-building"></i> Departments
+                </a>
+            </li>
+            <li>
+                <a href="courses.html">
+                    <i class="fa-solid fa-book"></i> Courses
+                </a>
+            </li>
+            <li>
+                <a href="reports.html">
+                    <i class="fa-solid fa-chart-column"></i> Reports
+                </a>
+            </li>
+            <li>
+                <a href="settings.html">
+                    <i class="fa-solid fa-gear"></i> Settings
+                </a>
+            </li>
+            <li>
+                <a href="index.html">
+                    <i class="fa-solid fa-right-from-bracket"></i> Logout
+                </a>
+            </li>
+        </ul>
+
+    </aside>
+
+    <!-- ================= MAIN CONTENT ================= -->
+
+    <main class="main-content">
+
+        <!-- Header -->
+        <header class="topbar">
+            <div style="display: flex; align-items: center;">
+                <!-- Hamburger Menu for Mobile -->
+                <button class="sidebar-toggle" id="sidebar-toggle" aria-label="Toggle Sidebar">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                <div>
+                    <h1>Admin Dashboard</h1>
+                    <p>Welcome, Administrator</p>
+                </div>
+            </div>
+
+            <div class="profile">
+                <img src="images/admin.png" alt="Admin Profile" onerror="this.src='https://via.placeholder.com/40'">
+            </div>
+        </header>
+
+        <!-- Statistics -->
+        <section class="dashboard-cards">
+            <div class="card">
+                <i class="fa-solid fa-user-graduate"></i>
+                <h2>1,250</h2>
+                <p>Total Students</p>
+            </div>
+            <div class="card">
+                <i class="fa-solid fa-chalkboard-user"></i>
+                <h2>75</h2>
+                <p>Total Faculty</p>
+            </div>
+            <div class="card">
+                <i class="fa-solid fa-book-open"></i>
+                <h2>42</h2>
+                <p>Courses</p>
+            </div>
+            <div class="card">
+                <i class="fa-solid fa-building"></i>
+                <h2>8</h2>
+                <p>Departments</p>
+            </div>
+        </section>
+
+        <!-- Quick Actions -->
+        <section class="quick-access">
+            <h2>Quick Actions</h2>
+            <div class="quick-grid">
+                <a href="manage-students.html" class="quick-card">
+                    <i class="fa-solid fa-user-plus"></i>
+                    <span>Add Student</span>
+                </a>
+                <a href="manage-faculty.html" class="quick-card">
+                    <i class="fa-solid fa-user-tie"></i>
+                    <span>Add Faculty</span>
+                </a>
+                <a href="departments.html" class="quick-card">
+                    <i class="fa-solid fa-building"></i>
+                    <span>Departments</span>
+                </a>
+                <a href="courses.html" class="quick-card">
+                    <i class="fa-solid fa-book-open"></i>
+                    <span>Courses</span>
+                </a>
+                <a href="reports.html" class="quick-card">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <span>Reports</span>
+                </a>
+                <a href="settings.html" class="quick-card">
+                    <i class="fa-solid fa-gear"></i>
+                    <span>Settings</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- Recent Students -->
+        <section class="table-section">
+            <h2>Recently Registered Students</h2>
+            <!-- Added wrapper to allow horizontal scrolling on small screens -->
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Department</th>
+                            <th>Semester</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>ST101</td>
+                            <td>Yug Makadiya</td>
+                            <td>Computer Science</td>
+                            <td>5</td>
+                            <td>Active</td>
+                        </tr>
+                        <tr>
+                            <td>ST102</td>
+                            <td>Rahul Patel</td>
+                            <td>Information Technology</td>
+                            <td>3</td>
+                            <td>Active</td>
+                        </tr>
+                        <tr>
+                            <td>ST103</td>
+                            <td>Priya Shah</td>
+                            <td>Computer Science</td>
+                            <td>7</td>
+                            <td>Active</td>
+                        </tr>
+                        <tr>
+                            <td>ST104</td>
+                            <td>Meet Joshi</td>
+                            <td>Mechanical</td>
+                            <td>5</td>
+                            <td>Pending</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Notices -->
+        <section class="notice-board">
+            <h2>Administration Notices</h2>
+            <ul>
+                <li>📢 Admission process starts from 01 August 2026.</li>
+                <li>📅 Faculty meeting scheduled on Friday at 11:00 AM.</li>
+                <li>📚 Semester examination timetable published.</li>
+                <li>🎓 Student registration portal is now open.</li>
+            </ul>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2026 StudentHub Admin Panel | All Rights Reserved.</p>
+        </footer>
+
+    </main>
+
+    <!-- Overlay for mobile sidebar -->
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+    <script>
+        // Simple script for mobile sidebar toggle
+        const sidebar = document.getElementById('sidebar');
+        const sidebarToggle = document.getElementById('sidebar-toggle');
+        const overlay = document.getElementById('sidebar-overlay');
+
+        function toggleSidebar() {
+            sidebar.classList.toggle('active');
+            overlay.classList.toggle('active');
+        }
+
+        sidebarToggle.addEventListener('click', toggleSidebar);
+        overlay.addEventListener('click', toggleSidebar);
+    </script>
+</body>
+</html>

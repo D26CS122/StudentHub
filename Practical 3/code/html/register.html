@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration | StudentHub</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+        
+    <style>
+        /* Floating theme button for pages without navbar */
+        .floating-theme-btn {
+            position: absolute;
+            top: 1.5rem;
+            right: 2rem;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(5px);
+            padding: 0.5rem;
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--border-color);
+        }
+        
+        /* Error message styling */
+        .error-message {
+            color: #ef4444;
+            font-size: 0.85rem;
+            margin-top: 0.25rem;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Theme Switcher (Practical 4) -->
+    <button id="theme-toggle" class="theme-btn floating-theme-btn" aria-label="Toggle Dark Mode">
+        <i class="fa-solid fa-moon"></i>
+    </button>
+
+    <!-- ================= REGISTER PAGE ================= -->
+
+    <main class="register-page">
+
+        <section class="register-container">
+
+            <!-- Left Side -->
+
+            <div class="register-left">
+
+                <div class="register-content">
+
+                    <h1>StudentHub</h1>
+
+                    <h2>Create Your Account</h2>
+
+                    <p>
+                        Register to access your dashboard, attendance,
+                        assignments, study materials, timetable, and profile.
+                    </p>
+
+                    <img src="images/register.png"
+                        alt="Student Registration Illustration">
+
+                </div>
+
+            </div>
+
+            <!-- Right Side -->
+
+            <div class="register-right">
+
+                <form action="student-login.html" method="post" class="register-form" id="student-register-form">
+
+                    <h2>Student Registration</h2>
+
+                    <!-- Full Name -->
+
+                    <div class="input-box">
+                        <label for="fullname">Full Name</label>
+
+                        <div class="input-field">
+                            <i class="fa-solid fa-user"></i>
+
+                            <input
+                                type="text"
+                                id="fullname"
+                                name="fullname"
+                                placeholder="Enter Full Name"
+                                required>
+                        </div>
+                    </div>
+
+                    <!-- Enrollment Number -->
+
+                    <div class="input-box">
+                        <label for="enrollment">Enrollment Number</label>
+
+                        <div class="input-field">
+                            <i class="fa-solid fa-id-card"></i>
+
+                            <input
+                                type="text"
+                                id="enrollment"
+                                name="enrollment"
+                                placeholder="Enter Enrollment Number"
+                                required>
+                        </div>
+                    </div>
+
+                    <!-- Email -->
+
+                    <div class="input-box">
+                        <label for="email">Email Address</label>
+
+                        <div class="input-field">
+                            <i class="fa-solid fa-envelope"></i>
+
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="Enter Email Address"
+                                required>
+                        </div>
+                    </div>
+
+                    <!-- Phone -->
+
+                    <div class="input-box">
+                        <label for="phone">Mobile Number</label>
+
+                        <div class="input-field">
+                            <i class="fa-solid fa-phone"></i>
+
+                            <input
+                                type="tel"
+                                id="phone"
+                                name="phone"
+                                placeholder="Enter Mobile Number"
+                                required>
+                        </div>
+                    </div>
+
+                    <!-- Department -->
+
+                    <div class="input-box">
+                        <label for="department">Department</label>
+
+                        <div class="input-field">
+
+                            <i class="fa-solid fa-building-columns"></i>
+
+                            <select id="department" name="department" required>
+                                <option value="">Select Department</option>
+                                <option>Computer Science</option>
+                                <option>Information Technology</option>
+                                <option>Mechanical Engineering</option>
+                                <option>Civil Engineering</option>
+                                <option>Electrical Engineering</option>
+                                <option>Electronics & Communication</option>
+                            </select>
+
+                        </div>
+                    </div>
+
+                    <!-- Semester -->
+
+                    <div class="input-box">
+                        <label for="semester">Semester</label>
+
+                        <div class="input-field">
+
+                            <i class="fa-solid fa-book"></i>
+
+                            <select id="semester" name="semester" required>
+                                <option value="">Select Semester</option>
+                                <option>Semester 1</option>
+                                <option>Semester 2</option>
+                                <option>Semester 3</option>
+                                <option>Semester 4</option>
+                                <option>Semester 5</option>
+                                <option>Semester 6</option>
+                                <option>Semester 7</option>
+                                <option>Semester 8</option>
+                            </select>
+
+                        </div>
+                    </div>
+
+                    <!-- Password -->
+
+                    <div class="input-box">
+                        <label for="password">Password</label>
+
+                        <div class="input-field">
+
+                            <i class="fa-solid fa-lock"></i>
+
+                            <input
+                                type="password"
+                                id="password"
+                                name="password"
+                                placeholder="Create Password"
+                                required>
+
+                        </div>
+                    </div>
+
+                    <!-- Confirm Password -->
+
+                    <div class="input-box">
+                        <label for="confirm-password">Confirm Password</label>
+
+                        <div class="input-field">
+
+                            <i class="fa-solid fa-key"></i>
+
+                            <input
+                                type="password"
+                                id="confirm-password"
+                                name="confirm-password"
+                                placeholder="Confirm Password"
+                                required>
+
+                        </div>
+                        <!-- Validation error message -->
+                        <span id="password-error" class="error-message">Passwords do not match!</span>
+                    </div>
+
+                    <!-- Terms -->
+
+                    <div class="terms">
+
+                        <label>
+                            <input type="checkbox" required>
+
+                            I agree to the
+                            <a href="#">Terms & Conditions</a>
+
+                        </label>
+
+                    </div>
+
+                    <!-- Register Button -->
+
+                    <button type="submit" class="register-btn btn-primary">
+
+                        <i class="fa-solid fa-user-plus"></i>
+
+                        Register
+
+                    </button>
+
+                    <!-- Login Link -->
+
+                    <div class="login-link">
+
+                        <p>
+
+                            Already have an account?
+
+                            <a href="student-login.html">
+
+                                Login Here
+
+                            </a>
+
+                        </p>
+
+                    </div>
+
+                    <!-- Home -->
+
+                    <div class="back-home">
+
+                        <a href="index.html">
+
+                            <i class="fa-solid fa-house"></i>
+
+                            Back to Home
+
+                        </a>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Global Script File -->
+    <script src="js/script.js"></script>
+
+    <!-- Page Specific Script for Practical 4 DOM Manipulation (Form Validation) -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const registerForm = document.getElementById('student-register-form');
+            const password = document.getElementById('password');
+            const confirmPassword = document.getElementById('confirm-password');
+            const passwordError = document.getElementById('password-error');
+            
+            // Real-time validation
+            confirmPassword.addEventListener('input', () => {
+                if(password.value !== confirmPassword.value && confirmPassword.value !== '') {
+                    passwordError.style.display = 'block';
+                    confirmPassword.style.borderColor = '#ef4444';
+                } else {
+                    passwordError.style.display = 'none';
+                    confirmPassword.style.borderColor = ''; // reset
+                }
+            });
+
+            if(registerForm) {
+                registerForm.addEventListener('submit', (e) => {
+                    e.preventDefault(); // Prevent actual submission for demo
+                    
+                    if(password.value !== confirmPassword.value) {
+                        passwordError.style.display = 'block';
+                        confirmPassword.style.borderColor = '#ef4444';
+                        return; // Stop submission
+                    }
+                    
+                    const name = document.getElementById('fullname').value;
+                    
+                    alert(`Registration successful for ${name}! Please login.`);
+                    // Simulate redirect
+                    window.location.href = "student-login.html";
+                });
+            }
+        });
+    </script>
+
+</body>
+</html>

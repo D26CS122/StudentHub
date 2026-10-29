@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard | StudentHub</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    
+    <style>
+        /* Sidebar Layout (Practical 3 CSS Grid) */
+        body {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            min-height: 100vh;
+        }
+
+        .sidebar {
+            background-color: var(--surface-color);
+            border-right: 1px solid var(--border-color);
+            padding: 2rem 0;
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            overflow-y: auto;
+        }
+
+        .sidebar .logo {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--primary-color);
+        }
+
+        .sidebar ul {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sidebar ul li a {
+            padding: 1rem 2rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .sidebar ul li a:hover, .sidebar ul li.active a {
+            background-color: rgba(79, 70, 229, 0.1);
+            color: var(--primary-color);
+            border-right: 4px solid var(--primary-color);
+        }
+
+        .main-content {
+            padding: 2rem 5%;
+            background-color: var(--bg-color);
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .topbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--surface-color);
+            padding: 1.5rem 2rem;
+            border-radius: 1rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .topbar .profile {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .topbar .profile img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--primary-color);
+        }
+
+        /* Dashboard Cards Grid */
+        .dashboard-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .dashboard-cards .card {
+            background: var(--surface-color);
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: var(--shadow-sm);
+            text-align: center;
+            border-bottom: 4px solid var(--primary-color);
+            transition: transform 0.3s ease;
+        }
+
+        .dashboard-cards .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .dashboard-cards .card i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        /* Quick Access Grid */
+        .quick-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .quick-card {
+            background: var(--surface-color);
+            padding: 1.5rem;
+            border-radius: 1rem;
+            box-shadow: var(--shadow-sm);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            text-align: center;
+            border: 1px solid var(--border-color);
+        }
+
+        .quick-card:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        /* Table */
+        .table-section table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--surface-color);
+            box-shadow: var(--shadow-sm);
+            border-radius: 1rem;
+            overflow: hidden;
+            margin-top: 1.5rem;
+        }
+
+        .table-section th, .table-section td {
+            padding: 1.2rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .table-section th {
+            background: var(--primary-color);
+            color: white;
+        }
+        
+        .status-badge {
+            padding: 0.3rem 0.8rem;
+            border-radius: 1rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .status-pending {
+            background: #fef3c7;
+            color: #d97706;
+        }
+        
+        .status-submitted {
+            background: #d1fae5;
+            color: #059669;
+        }
+
+        /* Notice Board */
+        .notice-board ul {
+            background: var(--surface-color);
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: var(--shadow-sm);
+            margin-top: 1.5rem;
+        }
+
+        .notice-board li {
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .notice-board li:last-child {
+            border-bottom: none;
+        }
+
+        @media (max-width: 992px) {
+            body {
+                grid-template-columns: 1fr;
+            }
+            .sidebar {
+                display: none; /* In a full app, this would be a toggle menu */
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- ================= SIDEBAR ================= -->
+
+<aside class="sidebar">
+
+    <div class="logo">
+        <h2>StudentHub</h2>
+    </div>
+
+    <ul>
+
+        <li class="active">
+            <a href="dashboard.html">
+                <i class="fa-solid fa-house"></i>
+                Dashboard
+            </a>
+        </li>
+
+        <li>
+            <a href="profile.html">
+                <i class="fa-solid fa-user"></i>
+                Profile
+            </a>
+        </li>
+
+        <li>
+            <a href="attendance.html">
+                <i class="fa-solid fa-calendar-check"></i>
+                Attendance
+            </a>
+        </li>
+
+        <li>
+            <a href="assignments.html">
+                <i class="fa-solid fa-file-lines"></i>
+                Assignments
+            </a>
+        </li>
+
+        <li>
+            <a href="study-material.html">
+                <i class="fa-solid fa-book-open"></i>
+                Study Material
+            </a>
+        </li>
+
+        <li>
+            <a href="timetable.html">
+                <i class="fa-solid fa-calendar-days"></i>
+                Timetable
+            </a>
+        </li>
+
+        <li>
+            <a href="notices.html">
+                <i class="fa-solid fa-bullhorn"></i>
+                Notices
+            </a>
+        </li>
+
+        <li>
+            <a href="contact.html">
+                <i class="fa-solid fa-envelope"></i>
+                Contact
+            </a>
+        </li>
+
+        <li>
+            <a href="index.html">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                Logout
+            </a>
+        </li>
+
+    </ul>
+
+</aside>
+
+<!-- ================= MAIN CONTENT ================= -->
+
+<div class="main-content">
+
+    <!-- HEADER -->
+
+    <header class="topbar">
+
+        <div>
+            <h1>Dashboard</h1>
+            <p>Welcome Back, Yug Makadiya 👋</p>
+        </div>
+
+        <div class="profile">
+            
+            <!-- Theme Switcher (Practical 4) -->
+            <button id="theme-toggle" class="theme-btn" aria-label="Toggle Dark Mode" style="background:transparent; border:none; font-size:1.5rem; cursor:pointer; color:inherit;">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+
+            <img src="images/profile.jpg"
+            alt="Student">
+
+        </div>
+
+    </header>
+
+    <!-- STATISTICS -->
+
+    <section class="dashboard-cards">
+
+        <div class="card">
+
+            <i class="fa-solid fa-calendar-check"></i>
+
+            <h2>92%</h2>
+
+            <p>Attendance</p>
+
+        </div>
+
+        <div class="card">
+
+            <i class="fa-solid fa-book"></i>
+
+            <h2>6</h2>
+
+            <p>Subjects</p>
+
+        </div>
+
+        <div class="card">
+
+            <i class="fa-solid fa-file-circle-check"></i>
+
+            <h2>8</h2>
+
+            <p>Assignments</p>
+
+        </div>
+
+        <div class="card">
+
+            <i class="fa-solid fa-award"></i>
+
+            <h2>9.69</h2>
+
+            <p>CGPA</p>
+
+        </div>
+
+    </section>
+
+    <!-- QUICK ACCESS -->
+
+    <section class="quick-access">
+
+        <h2>Quick Access</h2>
+
+        <div class="quick-grid">
+
+            <a href="attendance.html" class="quick-card">
+                <i class="fa-solid fa-calendar-check"></i>
+                <span>Attendance</span>
+            </a>
+
+            <a href="assignments.html" class="quick-card">
+                <i class="fa-solid fa-file-lines"></i>
+                <span>Assignments</span>
+            </a>
+
+            <a href="study-material.html" class="quick-card">
+                <i class="fa-solid fa-book-open"></i>
+                <span>Study Material</span>
+            </a>
+
+            <a href="timetable.html" class="quick-card">
+                <i class="fa-solid fa-calendar-days"></i>
+                <span>Timetable</span>
+            </a>
+
+            <a href="notices.html" class="quick-card">
+                <i class="fa-solid fa-bullhorn"></i>
+                <span>Notices</span>
+            </a>
+
+            <a href="profile.html" class="quick-card">
+                <i class="fa-solid fa-user"></i>
+                <span>Profile</span>
+            </a>
+
+        </div>
+
+    </section>
+
+    <!-- RECENT ASSIGNMENTS -->
+
+    <section class="table-section">
+
+        <h2>Upcoming Assignments</h2>
+        <p style="color: var(--text-muted); font-size: 0.9rem;">(Click a pending assignment status to submit it)</p>
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>Subject</th>
+                    <th>Assignment</th>
+                    <th>Due Date</th>
+                    <th>Status</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                <tr>
+
+                    <td>Java</td>
+                    <td>MiniBank Project</td>
+                    <td>05 Aug 2026</td>
+                    <td><span class="status-badge status-pending js-submit-assignment">Pending</span></td>
+
+                </tr>
+
+                <tr>
+
+                    <td>Web Development</td>
+                    <td>Student Portal</td>
+                    <td>07 Aug 2026</td>
+                    <td><span class="status-badge status-submitted">Submitted</span></td>
+
+                </tr>
+
+                <tr>
+
+                    <td>Database</td>
+                    <td>MySQL Practical</td>
+                    <td>09 Aug 2026</td>
+                    <td><span class="status-badge status-pending js-submit-assignment">Pending</span></td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </section>
+
+    <!-- NOTICE BOARD -->
+
+    <section class="notice-board">
+
+        <h2>Latest Notices</h2>
+
+        <ul>
+
+            <li>
+                📢 Semester Examination starts from
+                <strong>20 August 2026</strong>.
+            </li>
+
+            <li>
+                📚 Assignment submission deadline extended.
+            </li>
+
+            <li>
+                🎉 Technical Fest registration is now open.
+            </li>
+
+            <li>
+                📝 Internal practical schedule uploaded.
+            </li>
+
+        </ul>
+
+    </section>
+
+    <!-- FOOTER -->
+
+    <footer style="text-align: center; margin-top: 2rem;">
+
+        <p>
+            © 2026 StudentHub | All Rights Reserved.
+        </p>
+
+    </footer>
+
+</div>
+
+<!-- Global JS -->
+<script src="js/script.js"></script>
+
+<!-- Page Specific Script for Practical 4 DOM Manipulation -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Event Handling for Assignment Submission Simulation
+        const assignmentBadges = document.querySelectorAll('.js-submit-assignment');
+        
+        assignmentBadges.forEach(badge => {
+            badge.addEventListener('click', (e) => {
+                const target = e.target;
+                
+                // Class manipulation
+                if(target.classList.contains('status-pending')) {
+                    const confirmSubmit = confirm('Do you want to submit this assignment now?');
+                    
+                    if(confirmSubmit) {
+                        target.classList.remove('status-pending');
+                        target.classList.add('status-submitted');
+                        target.textContent = 'Submitted';
+                        target.style.transform = 'scale(1.1)';
+                        
+                        setTimeout(() => {
+                            target.style.transform = 'scale(1)';
+                        }, 200);
+                        
+                        alert('Assignment Submitted Successfully!');
+                    }
+                }
+            });
+        });
+    });
+</script>
+
+</body>
+</html>

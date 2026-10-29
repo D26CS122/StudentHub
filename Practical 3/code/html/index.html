@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="StudentHub - Modern Student Portal">
+    <meta name="keywords" content="Student Portal, College Portal, StudentHub">
+    <meta name="author" content="StudentHub">
+
+    <title>StudentHub | Home</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- ================= NOTIFICATION BANNER (Practical 4) ================= -->
+    <div id="notification-banner" class="banner hidden">
+        <p><strong>Notice:</strong> Welcome to the new semester! Registration is now open.</p>
+        <button id="close-banner" aria-label="Close Notification"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+
+    <!-- ================= HEADER ================= -->
+
+    <header>
+
+        <nav class="navbar">
+
+            <div class="logo">
+                <h2>StudentHub</h2>
+            </div>
+
+            <!-- Hamburger Menu for Mobile (Practical 4) -->
+            <button id="hamburger-menu" class="hamburger" aria-label="Toggle Menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Dashboard</a></li>
+                <li><a href="#">Attendance</a></li>
+                <li><a href="#">Assignments</a></li>
+                <li><a href="#">Study Material</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+
+            <div class="nav-buttons">
+                <!-- Theme Switcher (Practical 4) -->
+                <button id="theme-toggle" class="theme-btn" aria-label="Toggle Dark Mode">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <!-- Trigger for Modal added to Student Login -->
+                <a href="#" class="btn" id="open-modal-btn">Student Login</a>
+            </div>
+
+        </nav>
+
+    </header>
+
+    <!-- ================= HERO SECTION ================= -->
+
+    <main>
+
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <h1>Welcome to StudentHub</h1>
+
+                <p>
+                    A complete digital platform for students, faculty, and
+                    administrators to manage academics efficiently.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="student-login.html" class="btn-primary">
+                        Get Started
+                    </a>
+
+                    <a href="#features" class="btn-secondary">
+                        Learn More
+                    </a>
+                </div>
+
+            </div>
+
+            <!-- Image/Content Slider replacing static image for Practical 4 -->
+            <div class="hero-slider">
+                <div class="slider-container" id="slider">
+                    <div class="slide active">
+                        <img src="images/hero.png" alt="Student Portal Illustration 1">
+                    </div>
+                    <div class="slide">
+                        <img src="images/slider2.png" alt="Student Portal Illustration 2">
+                    </div>
+                    <div class="slide">
+                        <img src="images/slider3.png" alt="Student Portal Illustration 3">
+                    </div>
+                </div>
+                <!-- Slider Controls -->
+                <button class="slider-btn prev" id="slider-prev"><i class="fa-solid fa-chevron-left"></i></button>
+                <button class="slider-btn next" id="slider-next"><i class="fa-solid fa-chevron-right"></i></button>
+                <div class="slider-dots" id="slider-dots">
+                    <span class="dot active" data-index="0"></span>
+                    <span class="dot" data-index="1"></span>
+                    <span class="dot" data-index="2"></span>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- ================= FEATURES ================= -->
+
+        <section id="features">
+
+            <h2>Portal Features</h2>
+
+            <div class="feature-container">
+
+                <article class="feature-card">
+
+                    <i class="fa-solid fa-user-graduate"></i>
+
+                    <h3>Student Dashboard</h3>
+
+                    <p>
+                        Access attendance, assignments,
+                        timetable and study material.
+                    </p>
+
+                </article>
+
+                <article class="feature-card">
+
+                    <i class="fa-solid fa-book-open"></i>
+
+                    <h3>Study Material</h3>
+
+                    <p>
+                        Download notes, PDFs,
+                        presentations and lecture resources.
+                    </p>
+
+                </article>
+
+                <article class="feature-card">
+
+                    <i class="fa-solid fa-calendar-check"></i>
+
+                    <h3>Attendance</h3>
+
+                    <p>
+                        Monitor attendance records
+                        with real-time updates.
+                    </p>
+
+                </article>
+
+                <article class="feature-card">
+
+                    <i class="fa-solid fa-file-circle-check"></i>
+
+                    <h3>Assignments</h3>
+
+                    <p>
+                        Submit assignments,
+                        check deadlines and grades.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+        <!-- ================= PORTAL ACCESS ================= -->
+
+        <section class="portal-section">
+
+            <h2>Choose Your Portal</h2>
+
+            <div class="portal-container">
+
+                <article class="portal-card">
+
+                    <i class="fa-solid fa-user-graduate"></i>
+
+                    <h3>Student Portal</h3>
+
+                    <p>
+                        Login to access your academic dashboard.
+                    </p>
+
+                    <a href="student-login.html">
+                        Student Login
+                    </a>
+
+                </article>
+
+                <article class="portal-card">
+
+                    <i class="fa-solid fa-chalkboard-user"></i>
+
+                    <h3>Faculty Portal</h3>
+
+                    <p>
+                        Manage attendance,
+                        assignments and notices.
+                    </p>
+
+                    <a href="faculty-login.html">
+                        Faculty Login
+                    </a>
+
+                </article>
+
+                <article class="portal-card">
+
+                    <i class="fa-solid fa-user-shield"></i>
+
+                    <h3>Admin Portal</h3>
+
+                    <p>
+                        Manage users,
+                        departments and reports.
+                    </p>
+
+                    <a href="admin-login.html">
+                        Admin Login
+                    </a>
+
+                </article>
+
+            </div>
+
+        </section>
+
+        <!-- ================= ABOUT ================= -->
+
+        <section class="about">
+
+            <div class="about-content">
+
+                <h2>About StudentHub</h2>
+
+                <p>
+
+                    StudentHub is an integrated academic management
+                    system designed to simplify communication between
+                    students, faculty, and administrators.
+
+                </p>
+
+                <p>
+
+                    It provides secure access to attendance,
+                    assignments, notices, timetable,
+                    study material, profile management and more.
+
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- ================= FAQ SECTION (Practical 4) ================= -->
+        
+        <section class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        How do I view my assignments?
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Go to your Student Dashboard and click on the "Assignments" tab to view all pending and completed assignments.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        How do I reset my password?
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Click on "Student Login" and use the "Forgot Password" link. Instructions will be sent to your registered email.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= CONTACT ================= -->
+
+        <section class="contact">
+
+            <h2>Contact Us</h2>
+
+            <p>Email : support@studenthub.edu</p>
+
+            <p>Phone : +91 98765 43210</p>
+
+            <p>Address : Your College Campus</p>
+
+        </section>
+
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+
+            &copy; 2026 StudentHub.
+            All Rights Reserved.
+
+        </p>
+
+    </footer>
+
+    <!-- ================= MODAL POPUP (Practical 4) ================= -->
+    <div id="login-modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Quick Login Demo</h2>
+            <p>Enter any credentials to see the Javascript validation.</p>
+            <form id="modal-login-form" class="modal-form">
+                <div class="form-group">
+                    <label for="student-id">Student ID</label>
+                    <input type="text" id="student-id" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" required>
+                </div>
+                <button type="submit" class="btn-primary full-width">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Script File -->
+    <script src="js/script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback | StudentHub</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+        
+    <style>
+        .page-header nav {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+        
+        /* Modal for feedback success */
+        .feedback-success-modal {
+            text-align: center;
+            padding: 2rem;
+        }
+        .feedback-success-modal i {
+            font-size: 4rem;
+            color: #10b981;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="page-header navbar">
+
+        <div class="logo">
+            <h2>StudentHub</h2>
+        </div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="contact.html">Contact</a>
+            <a href="feedback.html" class="active" style="color: var(--primary-color); font-weight: bold;">Feedback</a>
+            
+            <!-- Theme Switcher (Practical 4) -->
+            <button id="theme-toggle" class="theme-btn" aria-label="Toggle Dark Mode" style="background:transparent; border:none; font-size:1.2rem; cursor:pointer; color:inherit;">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+        </nav>
+
+    </header>
+
+    <!-- ================= FEEDBACK SECTION ================= -->
+
+    <main class="feedback-page section">
+
+        <section class="feedback-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 3rem;">
+
+            <div class="feedback-info" style="background: var(--primary-color); color: white; padding: 3rem; border-radius: 1rem; box-shadow: var(--shadow-lg); text-align: center; display: flex; flex-direction: column; justify-content: center;">
+
+                <i class="fa-solid fa-comments" style="font-size: 5rem; margin-bottom: 1.5rem;"></i>
+
+                <h1 style="font-size: 2.5rem; margin-bottom: 1rem;">We Value Your Feedback</h1>
+
+                <p style="font-size: 1.1rem; line-height: 1.8;">
+                    Your suggestions help us improve StudentHub.
+                    Please share your experience, report issues,
+                    or suggest new features.
+                </p>
+                
+                <!-- Dynamic Message Box -->
+                <div id="dynamic-rating-msg" style="margin-top: 2rem; padding: 1rem; background: rgba(255,255,255,0.2); border-radius: 0.5rem; display: none; transition: transform 0.2s;">
+                    <strong>Thanks for the <span id="stars-display"></span> star rating!</strong>
+                </div>
+
+            </div>
+
+            <div class="feedback-form" style="background: var(--surface-color); padding: 3rem; border-radius: 1rem; box-shadow: var(--shadow-md);">
+
+                <form id="feedbackForm" action="#" method="post">
+
+                    <h2 style="margin-bottom: 2rem; color: var(--primary-color);">Submit Feedback</h2>
+
+                    <!-- Full Name -->
+
+                    <div class="input-box form-group">
+
+                        <label for="fullname">Full Name</label>
+
+                        <input
+                            type="text"
+                            id="fullname"
+                            name="fullname"
+                            class="form-input"
+                            placeholder="Enter your full name"
+                            required>
+
+                    </div>
+
+                    <!-- Email -->
+
+                    <div class="input-box form-group">
+
+                        <label for="email">Email Address</label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            class="form-input"
+                            placeholder="Enter your email"
+                            required>
+
+                    </div>
+
+                    <!-- User Role -->
+
+                    <div class="input-box form-group">
+
+                        <label for="role">User Role</label>
+
+                        <select id="role" name="role" class="form-input" required>
+
+                            <option value="">Select Role</option>
+                            <option>Student</option>
+                            <option>Faculty</option>
+                            <option>Administrator</option>
+
+                        </select>
+
+                    </div>
+
+                    <!-- Rating -->
+
+                    <div class="input-box form-group">
+
+                        <label>Overall Rating</label>
+
+                        <div class="rating" style="padding: 1rem; background: var(--bg-color); border-radius: 0.5rem; border: 1px solid var(--border-color);">
+
+                            <label style="display:block; margin-bottom:0.5rem;"><input type="radio" name="rating" value="5" class="rating-radio" required> ⭐⭐⭐⭐⭐ Excellent</label>
+
+                            <label style="display:block; margin-bottom:0.5rem;"><input type="radio" name="rating" value="4" class="rating-radio"> ⭐⭐⭐⭐ Very Good</label>
+
+                            <label style="display:block; margin-bottom:0.5rem;"><input type="radio" name="rating" value="3" class="rating-radio"> ⭐⭐⭐ Good</label>
+
+                            <label style="display:block; margin-bottom:0.5rem;"><input type="radio" name="rating" value="2" class="rating-radio"> ⭐⭐ Fair</label>
+
+                            <label style="display:block;"><input type="radio" name="rating" value="1" class="rating-radio"> ⭐ Poor</label>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Feedback Type -->
+
+                    <div class="input-box form-group">
+
+                        <label for="type">Feedback Type</label>
+
+                        <select id="type" name="type" class="form-input" required>
+
+                            <option value="">Select Type</option>
+                            <option>Suggestion</option>
+                            <option>Complaint</option>
+                            <option>Bug Report</option>
+                            <option>Feature Request</option>
+                            <option>General Feedback</option>
+
+                        </select>
+
+                    </div>
+
+                    <!-- Message -->
+
+                    <div class="input-box form-group">
+
+                        <label for="message">Your Feedback</label>
+
+                        <textarea
+                            id="message"
+                            name="message"
+                            rows="6"
+                            class="form-input"
+                            placeholder="Write your feedback here..."
+                            style="width: 100%; border: 1px solid var(--border-color); border-radius: 0.5rem; padding: 1rem;"
+                            required></textarea>
+
+                    </div>
+
+                    <!-- Recommend -->
+
+                    <div class="input-box form-group">
+
+                        <label style="display: flex; align-items: center; gap: 0.5rem;">
+
+                            <input type="checkbox">
+
+                            I would recommend StudentHub to others.
+
+                        </label>
+
+                    </div>
+
+                    <!-- Buttons -->
+
+                    <div class="button-group" style="display: flex; gap: 1rem; margin-top: 2rem;">
+
+                        <button type="submit" class="submit-btn btn-primary" style="flex: 1;">
+
+                            <i class="fa-solid fa-paper-plane"></i>
+
+                            Submit Feedback
+
+                        </button>
+
+                        <button type="reset" class="reset-btn btn-secondary">
+
+                            <i class="fa-solid fa-rotate-left"></i>
+
+                            Reset
+
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer style="text-align: center; padding: 2rem;">
+
+        <p>
+            &copy; 2026 StudentHub. All Rights Reserved.
+        </p>
+
+    </footer>
+
+    <!-- ================= SUCCESS MODAL (Practical 4) ================= -->
+    <div id="feedback-modal" class="modal hidden">
+        <div class="modal-content feedback-success-modal">
+            <i class="fa-solid fa-circle-check"></i>
+            <h2>Thank You!</h2>
+            <p>Your feedback has been submitted successfully.</p>
+            <button id="close-feedback-modal" class="btn-primary" style="margin-top: 1rem;">Close</button>
+        </div>
+    </div>
+
+    <!-- Global JS -->
+    <script src="js/script.js"></script>
+    
+    <!-- Page Specific Script for Practical 4 DOM Manipulation -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const ratingRadios = document.querySelectorAll('.rating-radio');
+            const dynamicRatingMsg = document.getElementById('dynamic-rating-msg');
+            const starsDisplay = document.getElementById('stars-display');
+            
+            const feedbackForm = document.getElementById('feedbackForm');
+            const feedbackModal = document.getElementById('feedback-modal');
+            const closeFeedbackModal = document.getElementById('close-feedback-modal');
+
+            // 1. Dynamic UI reaction when a rating is selected
+            ratingRadios.forEach(radio => {
+                radio.addEventListener('change', (e) => {
+                    const ratingValue = e.target.value;
+                    starsDisplay.textContent = ratingValue;
+                    dynamicRatingMsg.style.display = 'block';
+                    
+                    // Simple animation effect
+                    dynamicRatingMsg.style.transform = 'scale(1.05)';
+                    setTimeout(() => {
+                        dynamicRatingMsg.style.transform = 'scale(1)';
+                    }, 200);
+                });
+            });
+
+            // 2. Intercept form submission and show Modal Popup
+            if (feedbackForm) {
+                feedbackForm.addEventListener('submit', (e) => {
+                    e.preventDefault(); // Prevent page reload
+                    
+                    // Show custom success modal
+                    feedbackModal.classList.add('active');
+                });
+            }
+            
+            // 3. Handle modal close button
+            if (closeFeedbackModal) {
+                closeFeedbackModal.addEventListener('click', () => {
+                    feedbackModal.classList.remove('active');
+                    feedbackForm.reset();
+                    dynamicRatingMsg.style.display = 'none';
+                });
+            }
+        });
+    </script>
+
+</body>
+</html>

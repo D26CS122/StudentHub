@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="StudentHub student information">
+  <title>Student Information | StudentHub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="student-page">
+  <header class="header">
+    <div class="container"><div class="header-wrapper">
+      <a class="logo" href="index.html"><span class="logo-box"><i class="fa-solid fa-graduation-cap"></i></span><span class="logo-text"><strong>StudentHub</strong><span>CHARUSAT Student Portal</span></span></a>
+      <nav class="navbar" aria-label="Main navigation">
+        <a href="index.html">Home</a><a href="events.html">Events</a><a href="dashboard.html">Dashboard</a><a class="active" href="student.html">Student</a><a href="faq.html">FAQ</a><a href="contact.html">Contact</a>
+      </nav>
+      <div class="header-right"><a class="btn btn-outline" href="login.html">Login</a></div>
+    </div></div>
+  </header>
+  <main class="dash-shell"><div class="container">
+    <section class="dash-hero">
+      <span class="section-badge">Student record</span>
+      <h1>Student information</h1>
+      <p>View your academic profile and keep your StudentHub details up to date.</p>
+      <div class="hero-buttons"><a class="btn btn-primary" href="profile.html">Open my profile</a><a class="btn btn-outline" href="dashboard.html">View dashboard</a></div>
+    </section>
+    <section class="section"><div class="dash-panel">
+      <div class="dash-panel-head"><h2>Your account</h2></div>
+      <div class="profile-info-grid">
+        <div class="profile-info"><span class="profile-info-label">Name</span><strong class="profile-info-value" data-user="name">Student</strong></div>
+        <div class="profile-info"><span class="profile-info-label">Enrollment number</span><strong class="profile-info-value" data-user="id">—</strong></div>
+        <div class="profile-info"><span class="profile-info-label">Email</span><strong class="profile-info-value" data-user="email">—</strong></div>
+        <div class="profile-info"><span class="profile-info-label">Department</span><strong class="profile-info-value" data-user="department">—</strong></div>
+      </div>
+    </div></section>
+  </div></main>
+  <footer class="footer"><div class="container"><div class="footer-bottom"><p>© <span data-year></span> StudentHub.</p></div></div></footer>
+  <script src="../js/script.js"></script>
+</body>
+</html>

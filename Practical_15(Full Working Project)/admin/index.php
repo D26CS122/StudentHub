@@ -1,0 +1,5 @@
+<?php
+require_once __DIR__.'/../config/database.php';require_once __DIR__.'/../includes/security.php';sh_require_admin();
+$stats=[];foreach(['users'=>'users','students'=>'students','events'=>'events','registrations'=>'registrations'] as $label=>$table){$stats[$label]=(int)$db->query("SELECT COUNT(*) c FROM `$table`")->fetch_assoc()['c'];}
+$pageTitle='Admin Dashboard | StudentHub';$assetPrefix='../';require __DIR__.'/../includes/app-header.php';?>
+<h1>Administrator Dashboard</h1><div class="p15-grid"><?php foreach($stats as $label=>$n):?><article class="p15-card"><h2><?=sh_e(ucfirst($label))?></h2><p style="font-size:2rem;font-weight:800"><?=$n?></p></article><?php endforeach;?></div><div class="p15-card"><h2>Management</h2><ul><li><a href="students.php">Student management</a></li><li><a href="events.php">Event management</a></li><li><a href="audit-logs.php">Audit logs</a></li><li><a href="users.php">All users</a></li><li><a href="registrations.php">Event registrations</a></li><li><a href="../admin_dashboard.php">Back to Admin Dashboard</a></li></ul></div><?php require __DIR__.'/../includes/app-footer.php';?>

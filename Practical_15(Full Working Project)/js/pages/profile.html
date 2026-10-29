@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>My Profile | StudentHub</title>
+
+  <meta name="description"
+        content="Your StudentHub profile — personal details, academic record, skills, contact information and account settings for CHARUSAT students.">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Galada&display=swap"
+        rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="../css/style.css">
+
+</head>
+
+
+<body class="theme-teal profile-page">
+
+
+  <!-- ================= FLOATING BACKGROUND ================= -->
+
+  <div class="bg-animation">
+    <span class="ball ball1"></span>
+    <span class="ball ball2"></span>
+    <span class="ball ball3"></span>
+    <span class="ball ball4"></span>
+    <span class="ball ball5"></span>
+  </div>
+
+
+  <!-- ================= HEADER ================= -->
+
+  <header class="header">
+
+    <div class="container">
+
+      <div class="header-wrapper">
+
+        <!-- Logo -->
+        <a href="index.html" class="logo">
+
+          <div class="logo-box">
+            <i class="fa-solid fa-graduation-cap"></i>
+          </div>
+
+          <div class="logo-text">
+            <h2>StudentHub</h2>
+            <span>CHARUSAT Student Portal</span>
+          </div>
+
+        </a>
+
+        <!-- Navigation -->
+        <nav class="navbar">
+          <a href="index.html">Home</a>
+          <a href="about.html" target="_blank">About</a>
+          <a href="events.html" target="_blank">Events</a>
+          <a href="dashboard.html" target="_blank">Dashboard</a>
+          <a href="profile.html" class="active">Profile</a>
+          <a href="faq.html" target="_blank">FAQ</a>
+          <a href="feedback.html" target="_blank">Feedback</a>
+          <a href="contact.html" target="_blank">Contact</a>
+          <a href="login.html" target="_blank">Login</a>
+          <a href="register.html" target="_blank">Register</a>
+        </nav>
+
+        <!-- Right side -->
+        <div class="header-right">
+
+          <div class="theme-switcher">
+
+            <button class="theme-btn active" data-theme="teal" type="button">
+              <span class="dot teal"></span>
+              Campus Teal
+            </button>
+
+            <button class="theme-btn" data-theme="blue" type="button">
+              <span class="dot blue"></span>
+              Midnight Blue
+            </button>
+
+          </div>
+
+          <button type="button" class="btn btn-outline" data-logout>
+            <i class="fa-solid fa-right-from-bracket"></i>
+            Sign Out
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <!-- ================= PROFILE ================= -->
+
+  <main class="profile-shell">
+
+    <div class="container">
+
+
+      <!-- ---------- PROFILE HERO ---------- -->
+
+      <section class="profile-hero">
+
+        <div class="profile-cover">
+          <span class="profile-cover-glow"></span>
+        </div>
+
+        <div class="profile-hero-body">
+
+          <div class="profile-avatar">
+            <span data-user="initials">ST</span>
+            <i class="fa-solid fa-circle-check profile-avatar-badge" aria-hidden="true"></i>
+          </div>
+
+          <div class="profile-headline">
+
+            <span class="section-badge">
+              <i class="fa-solid fa-id-badge"></i>
+              Student Profile
+            </span>
+
+            <h1 data-user="name">Student</h1>
+
+            <p class="profile-role" data-user="program">—</p>
+
+            <div class="profile-chips">
+              <span class="profile-chip"><i class="fa-solid fa-hashtag"></i> <span data-user="id">—</span></span>
+              <span class="profile-chip"><i class="fa-solid fa-building-columns"></i> CHARUSAT</span>
+              <span class="profile-chip"><i class="fa-solid fa-graduation-cap"></i> <span data-user="department">—</span></span>
+              <span class="profile-chip is-active"><i class="fa-solid fa-circle"></i> <span data-user="status">Active</span></span>
+            </div>
+
+          </div>
+
+          <div class="profile-hero-actions">
+            <a href="#profile-edit" class="btn btn-primary">
+              <i class="fa-solid fa-pen"></i>
+              Edit Profile
+            </a>
+            <a href="dashboard.html" target="_blank" class="btn btn-outline">
+              <i class="fa-solid fa-gauge-high"></i>
+              Dashboard
+            </a>
+          </div>
+
+        </div>
+
+        <div class="profile-quickstats">
+
+          <div class="profile-quickstat">
+            <span class="profile-quickstat-icon teal"><i class="fa-solid fa-award"></i></span>
+            <div>
+              <strong><span data-user="cgpa">—</span><small>/10</small></strong>
+              <span>Current CGPA</span>
+            </div>
+          </div>
+
+          <div class="profile-quickstat">
+            <span class="profile-quickstat-icon violet"><i class="fa-solid fa-user-check"></i></span>
+            <div>
+              <strong><span data-user="attendanceNum">—</span><small>%</small></strong>
+              <span>Attendance</span>
+            </div>
+          </div>
+
+          <div class="profile-quickstat">
+            <span class="profile-quickstat-icon amber"><i class="fa-solid fa-layer-group"></i></span>
+            <div>
+              <strong data-user="credits">—</strong>
+              <span>Credits Earned</span>
+            </div>
+          </div>
+
+          <div class="profile-quickstat">
+            <span class="profile-quickstat-icon rose"><i class="fa-solid fa-ranking-star"></i></span>
+            <div>
+              <strong data-user="rank">—</strong>
+              <span>Class Rank</span>
+            </div>
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- ---------- MAIN GRID ---------- -->
+
+      <div class="profile-grid">
+
+
+        <!-- ===== MAIN COLUMN ===== -->
+
+        <div class="profile-main">
+
+
+          <!-- About -->
+          <section class="dash-panel">
+
+            <div class="dash-panel-head">
+              <div>
+                <span>Introduction</span>
+                <h2>About Me</h2>
+              </div>
+              <i class="fa-solid fa-user-pen dash-panel-tag-icon"></i>
+            </div>
+
+            <p class="profile-bio" data-user="bio">
+              Add a short bio from the edit form below to tell people about yourself.
+            </p>
+
+          </section>
+
+
+          <!-- Academic information -->
+          <section class="dash-panel">
+
+            <div class="dash-panel-head">
+              <div>
+                <span>Records</span>
+                <h2>Academic Information</h2>
+              </div>
+              <span class="dash-panel-tag">Verified</span>
+            </div>
+
+            <div class="profile-info-grid">
+
+              <div class="profile-info">
+                <span class="profile-info-label"><i class="fa-solid fa-graduation-cap"></i> Program</span>
+                <span class="profile-info-value" data-user="program">—</span>
+              </div>
+
+              <div class="profile-info">
+                <span class="profile-info-label"><i class="fa-solid fa-building"></i> Institute</span>
+                <span class="profile-info-value">CSPIT — CHARUSAT University</span>
+              </div>
+
+              <div class="profile-info">
+                <span class="profile-info-label"><i class="fa-solid fa-hashtag"></i> Enrollment No.</span>
+                <span class="profile-info-value" data-user="id">—</span>
+              </div>
+
+              <div class="profile-info">
+                <span class="profile-info-label"><i class="fa-solid fa-calendar-days"></i> Batch</span>
+                <span class="profile-info-value" data-user="batch">—</span>
+              </div>
+
+              <div class="profile-info">
+                <span class="profile-info-label"><i class="fa-solid fa-layer-group"></i> Current Semester</span>
+                <span class="profile-info-value" data-user="semester">—</span>
+              </div>
+
+              <div class="profile-info">
+                <span class="profile-info-label"><i class="fa-solid fa-chalkboard-user"></i> Faculty Advisor</span>
+                <span class="profile-info-value" data-user="advisor">—</span>
+              </div>
+
+            </div>
+
+          </section>
+
+
+        </div>
+
+
+        <!-- ===== SIDE COLUMN ===== -->
+
+        <aside class="profile-side">
+
+
+          <!-- Contact -->
+          <section class="dash-panel">
+
+            <div class="dash-panel-head">
+              <div>
+                <span>Reach Me</span>
+                <h2>Contact Details</h2>
+              </div>
+            </div>
+
+            <ul class="profile-contact">
+
+              <li class="profile-contact-item">
+                <span class="profile-contact-icon"><i class="fa-solid fa-envelope"></i></span>
+                <div>
+                  <span>Email</span>
+                  <strong data-user="email">—</strong>
+                </div>
+              </li>
+
+              <li class="profile-contact-item">
+                <span class="profile-contact-icon"><i class="fa-solid fa-phone"></i></span>
+                <div>
+                  <span>Phone</span>
+                  <strong data-user="phone">—</strong>
+                </div>
+              </li>
+
+              <li class="profile-contact-item">
+                <span class="profile-contact-icon"><i class="fa-solid fa-location-dot"></i></span>
+                <div>
+                  <span>Address</span>
+                  <strong data-user="address">—</strong>
+                </div>
+              </li>
+
+            </ul>
+
+          </section>
+
+
+          <!-- Profile completion -->
+          <section class="dash-panel">
+
+            <div class="dash-panel-head">
+              <div>
+                <span>Account</span>
+                <h2>Profile Strength</h2>
+              </div>
+            </div>
+
+            <div class="profile-completion">
+              <div class="profile-completion-top">
+                <span>Completion</span>
+                <strong data-user="strength">—</strong>
+              </div>
+              <div class="dash-bar"><span class="dash-bar-fill" data-user-bar="strength" data-progress="0"></span></div>
+              <p class="profile-completion-hint">
+                <i class="fa-solid fa-circle-info"></i>
+                Fill in the fields below to strengthen your profile.
+              </p>
+            </div>
+
+          </section>
+
+
+          <!-- Quick actions -->
+          <section class="dash-panel">
+
+            <div class="dash-panel-head">
+              <div>
+                <span>Shortcuts</span>
+                <h2>Quick Actions</h2>
+              </div>
+            </div>
+
+            <div class="profile-actions">
+
+              <a href="#profile-edit" class="profile-action">
+                <span class="profile-action-icon teal"><i class="fa-solid fa-pen-to-square"></i></span>
+                <span>Edit Details</span>
+                <i class="fa-solid fa-chevron-right"></i>
+              </a>
+
+              <a href="dashboard.html" target="_blank" class="profile-action">
+                <span class="profile-action-icon violet"><i class="fa-solid fa-gauge-high"></i></span>
+                <span>View Dashboard</span>
+                <i class="fa-solid fa-chevron-right"></i>
+              </a>
+
+              <a href="events.html" target="_blank" class="profile-action">
+                <span class="profile-action-icon amber"><i class="fa-solid fa-calendar-star"></i></span>
+                <span>Browse Events</span>
+                <i class="fa-solid fa-chevron-right"></i>
+              </a>
+
+              <a href="login.html" class="profile-action" data-logout>
+                <span class="profile-action-icon rose"><i class="fa-solid fa-right-from-bracket"></i></span>
+                <span>Sign Out</span>
+                <i class="fa-solid fa-chevron-right"></i>
+              </a>
+
+            </div>
+
+          </section>
+
+        </aside>
+
+      </div>
+
+
+      <!-- ---------- EDIT DETAILS ---------- -->
+
+      <section class="dash-panel profile-edit" id="profile-edit">
+
+        <div class="dash-panel-head">
+          <div>
+            <span>Manage</span>
+            <h2>Edit Personal Information</h2>
+          </div>
+          <i class="fa-solid fa-sliders dash-panel-tag-icon"></i>
+        </div>
+
+        <form class="profile-form" id="profileForm" novalidate>
+
+          <div class="form-row">
+
+            <div class="form-group">
+              <label for="firstName"><i class="fa-solid fa-user"></i> First Name</label>
+              <div class="input-wrapper">
+                <i class="fa-solid fa-user"></i>
+                <input type="text" id="firstName" name="firstName" data-user-input="firstName" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="lastName"><i class="fa-solid fa-user"></i> Last Name</label>
+              <div class="input-wrapper">
+                <i class="fa-solid fa-user"></i>
+                <input type="text" id="lastName" name="lastName" data-user-input="lastName" required>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="form-row">
+
+            <div class="form-group">
+              <label for="profileEmail"><i class="fa-solid fa-envelope"></i> Email Address</label>
+              <div class="input-wrapper">
+                <i class="fa-solid fa-envelope"></i>
+                <input type="email" id="profileEmail" name="profileEmail" data-user-input="email" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="profilePhone"><i class="fa-solid fa-phone"></i> Phone Number</label>
+              <div class="input-wrapper">
+                <i class="fa-solid fa-phone"></i>
+                <input type="tel" id="profilePhone" name="profilePhone" data-user-input="phone" placeholder="+91 90000 00000">
+              </div>
+            </div>
+
+          </div>
+
+          <div class="form-row">
+
+            <div class="form-group">
+              <label for="profileDob"><i class="fa-solid fa-cake-candles"></i> Date of Birth</label>
+              <div class="input-wrapper">
+                <i class="fa-solid fa-cake-candles"></i>
+                <input type="text" id="profileDob" name="profileDob" placeholder="DD / MM / YYYY" data-user-input="dob">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="profileGender"><i class="fa-solid fa-venus-mars"></i> Gender</label>
+              <div class="input-wrapper select-wrapper">
+                <i class="fa-solid fa-venus-mars"></i>
+                <select id="profileGender" name="profileGender" data-user-input="gender">
+                  <option value="">Select</option>
+                  <option>Male</option>
+                  <option>Female</option>
+                  <option>Prefer not to say</option>
+                </select>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="form-group">
+            <label for="profileAddress"><i class="fa-solid fa-house"></i> Address</label>
+            <div class="input-wrapper is-textarea">
+              <i class="fa-solid fa-house"></i>
+              <textarea id="profileAddress" name="profileAddress" rows="2" data-user-input="address" placeholder="Your address"></textarea>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="profileBioField"><i class="fa-solid fa-pen-nib"></i> Short Bio</label>
+            <div class="input-wrapper is-textarea">
+              <i class="fa-solid fa-pen-nib"></i>
+              <textarea id="profileBioField" name="profileBioField" rows="3" data-user-input="bio" placeholder="Tell people a bit about yourself"></textarea>
+            </div>
+          </div>
+
+          <div class="form-message" id="profileFormMessage" role="status" aria-live="polite"></div>
+
+          <div class="profile-form-actions">
+            <button type="reset" class="btn btn-outline">
+              <i class="fa-solid fa-rotate-left"></i>
+              Reset
+            </button>
+            <button type="submit" class="btn btn-primary">
+              <i class="fa-solid fa-floppy-disk"></i>
+              Save Changes
+            </button>
+          </div>
+
+        </form>
+
+      </section>
+
+    </div>
+
+  </main>
+
+
+  <!-- ================= FOOTER ================= -->
+
+  <footer class="footer">
+
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+
+          <a href="index.html" class="logo">
+            <div class="logo-box">
+              <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+            <div class="logo-text">
+              <h2>StudentHub</h2>
+              <span>CHARUSAT Student Portal</span>
+            </div>
+          </a>
+
+          <p>
+            The digital campus companion for CHARUSAT students to manage
+            academics, events, profiles and campus life.
+          </p>
+
+        </div>
+
+        <div>
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="about.html" target="_blank">About</a></li>
+            <li><a href="events.html" target="_blank">Events</a></li>
+            <li><a href="dashboard.html" target="_blank">Dashboard</a></li>
+            <li><a href="profile.html">Profile</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Support</h4>
+          <ul>
+            <li><a href="faq.html" target="_blank">FAQ</a></li>
+            <li><a href="feedback.html" target="_blank">Feedback</a></li>
+            <li><a href="contact.html" target="_blank">Contact</a></li>
+            <li><a href="admin.html" target="_blank">Admin</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Student Information</h4>
+          <p><strong>Name:</strong> <span data-user="name">—</span></p>
+          <p><strong>ID:</strong> <span data-user="id">—</span></p>
+          <p><strong>Email:</strong> <span data-user="email">—</span></p>
+          <p><strong>Department:</strong> <span data-user="department">—</span></p>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>© <span data-year></span> StudentHub — CHARUSAT. Designed for academic excellence.</p>
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- ================= SCRIPT ================= -->
+  <script src="../js/script.js"></script>
+
+</body>
+
+</html>

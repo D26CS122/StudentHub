@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ | StudentHub</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    
+    <style>
+        .page-header nav {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+        
+        /* Smooth transition for details summary */
+        details.faq-item {
+            background-color: var(--surface-color);
+            border: 1px solid var(--border-color);
+            border-radius: 0.5rem;
+            margin-bottom: 1rem;
+            box-shadow: var(--shadow-sm);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        details.faq-item[open] {
+            box-shadow: var(--shadow-md);
+            border-color: var(--primary-color);
+        }
+
+        details.faq-item summary {
+            padding: 1.5rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            list-style: none; /* Hide default arrow */
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            color: var(--text-main);
+        }
+
+        details.faq-item summary::-webkit-details-marker {
+            display: none;
+        }
+
+        details.faq-item p {
+            padding: 0 1.5rem 1.5rem 3.5rem; /* Indent under text, past icon */
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+        
+        details.faq-item i {
+            color: var(--primary-color);
+            font-size: 1.25rem;
+            transition: transform 0.3s ease;
+        }
+
+        details.faq-item[open] summary i {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="page-header navbar">
+
+        <div class="logo">
+            <h2>StudentHub</h2>
+        </div>
+
+        <nav>
+
+            <a href="index.html">Home</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="contact.html">Contact</a>
+            <a href="faq.html" class="active" style="color: var(--primary-color); font-weight: bold;">FAQ</a>
+            
+            <!-- Theme Switcher (Practical 4) -->
+            <button id="theme-toggle" class="theme-btn" aria-label="Toggle Dark Mode" style="background:transparent; border:none; font-size:1.2rem; cursor:pointer; color:inherit;">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+        </nav>
+
+    </header>
+
+    <!-- ================= FAQ SECTION ================= -->
+
+    <main class="faq-page section">
+
+        <section class="faq-header section-header">
+
+            <h1>Frequently Asked Questions</h1>
+
+            <p>
+                Find answers to the most commonly asked questions about StudentHub.
+            </p>
+
+        </section>
+
+        <section class="faq-container" style="max-width: 800px; margin: 0 auto 4rem auto;">
+
+            <!-- Question 1 -->
+
+            <details class="faq-item js-accordion" open>
+
+                <summary>
+                    <i class="fa-solid fa-circle-question"></i>
+                    How do I log in to StudentHub?
+                </summary>
+
+                <p>
+                    Click on the Student Login button on the home page and
+                    enter your Student ID and password.
+                </p>
+
+            </details>
+
+            <!-- Question 2 -->
+
+            <details class="faq-item js-accordion">
+
+                <summary>
+                    <i class="fa-solid fa-circle-question"></i>
+                    How can I reset my password?
+                </summary>
+
+                <p>
+                    Click the "Forgot Password" link on the login page and
+                    follow the instructions sent to your registered email.
+                </p>
+
+            </details>
+
+            <!-- Question 3 -->
+
+            <details class="faq-item js-accordion">
+
+                <summary>
+                    <i class="fa-solid fa-circle-question"></i>
+                    Where can I check my attendance?
+                </summary>
+
+                <p>
+                    After logging in, open the Attendance page from the
+                    dashboard or sidebar menu.
+                </p>
+
+            </details>
+
+            <!-- Question 4 -->
+
+            <details class="faq-item js-accordion">
+
+                <summary>
+                    <i class="fa-solid fa-circle-question"></i>
+                    How do I submit assignments?
+                </summary>
+
+                <p>
+                    Visit the Assignments page, choose the assignment,
+                    upload your file, and click Submit.
+                </p>
+
+            </details>
+
+            <!-- Question 5 -->
+
+            <details class="faq-item js-accordion">
+
+                <summary>
+                    <i class="fa-solid fa-circle-question"></i>
+                    Where can I download study materials?
+                </summary>
+
+                <p>
+                    All lecture notes, PDFs, presentations, and other learning
+                    resources are available in the Study Material section.
+                </p>
+
+            </details>
+
+            <!-- Question 6 -->
+
+            <details class="faq-item js-accordion">
+
+                <summary>
+                    <i class="fa-solid fa-circle-question"></i>
+                    How can I update my profile?
+                </summary>
+
+                <p>
+                    Open the Profile page from your dashboard, edit your
+                    information, and click Save Changes.
+                </p>
+
+            </details>
+
+            <!-- Question 7 -->
+
+            <details class="faq-item js-accordion">
+
+                <summary>
+                    <i class="fa-solid fa-circle-question"></i>
+                    How do I contact the administrator?
+                </summary>
+
+                <p>
+                    Visit the Contact page and submit the contact form,
+                    or use the provided email and phone number.
+                </p>
+
+            </details>
+
+            <!-- Question 8 -->
+
+            <details class="faq-item js-accordion">
+
+                <summary>
+                    <i class="fa-solid fa-circle-question"></i>
+                    Can I access StudentHub on my mobile phone?
+                </summary>
+
+                <p>
+                    Yes. StudentHub is fully responsive and works on
+                    desktops, tablets, and smartphones.
+                </p>
+
+            </details>
+
+        </section>
+
+        <!-- ================= HELP SECTION ================= -->
+
+        <section class="help-box" style="text-align: center; background: linear-gradient(135deg, var(--primary-color), var(--primary-hover)); color: white; padding: 4rem 2rem; border-radius: 1rem; max-width: 800px; margin: 0 auto;">
+
+            <i class="fa-solid fa-headset" style="font-size: 3.5rem; margin-bottom: 1.5rem; background: rgba(255,255,255,0.2); width: 80px; height: 80px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center;"></i>
+
+            <h2 style="font-size: 2rem; margin-bottom: 1rem;">Still Need Help?</h2>
+
+            <p style="margin-bottom: 2rem; font-size: 1.1rem; opacity: 0.9;">
+                If your question isn't listed here, our support team is
+                happy to help you.
+            </p>
+
+            <a href="contact.html" class="help-btn btn" style="background: white; color: var(--primary-color);">
+                Contact Support
+            </a>
+
+        </section>
+
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer style="text-align: center; padding: 2rem; margin-top: 2rem;">
+
+        <p>
+            &copy; 2026 StudentHub. All Rights Reserved.
+        </p>
+
+    </footer>
+
+    <!-- Global JS -->
+    <script src="js/script.js"></script>
+    
+    <!-- Page Specific Script for Practical 4 DOM Manipulation (Accordion logic) -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const accordions = document.querySelectorAll('details.js-accordion');
+            
+            accordions.forEach(accordion => {
+                // Listen for when this details element opens or closes
+                accordion.addEventListener('toggle', (e) => {
+                    // If it just opened
+                    if (accordion.open) {
+                        // Close all other details elements
+                        accordions.forEach(otherAccordion => {
+                            if (otherAccordion !== accordion && otherAccordion.open) {
+                                otherAccordion.removeAttribute('open');
+                            }
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

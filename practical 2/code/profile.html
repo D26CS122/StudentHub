@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Profile | StudentHub</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="top-header">
+
+        <div class="logo">
+            <h2>StudentHub</h2>
+        </div>
+
+        <nav>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="attendance.html">Attendance</a>
+            <a href="assignments.html">Assignments</a>
+            <a href="profile.html" class="active">Profile</a>
+            <a href="index.html">Logout</a>
+        </nav>
+
+    </header>
+
+    <!-- ================= PROFILE SECTION ================= -->
+
+    <main class="profile-page">
+
+        <section class="profile-container">
+
+            <!-- Profile Card -->
+
+            <aside class="profile-card">
+
+                <img src="images/profile.jpg"
+                    alt="Student Profile Photo"
+                    class="profile-image">
+
+                <h2>Yug Makadiya</h2>
+
+                <p>Computer Science Student</p>
+
+                <button>Edit Profile</button>
+
+            </aside>
+
+            <!-- Profile Details -->
+
+            <section class="profile-details">
+
+                <h1>Student Profile</h1>
+
+                <!-- Personal Information -->
+
+                <div class="profile-box">
+
+                    <h3>
+                        <i class="fa-solid fa-user"></i>
+                        Personal Information
+                    </h3>
+
+                    <div class="info-grid">
+
+                        <div>
+                            <label>Full Name</label>
+                            <input type="text" value="Yug Makadiya">
+                        </div>
+
+                        <div>
+                            <label>Enrollment No.</label>
+                            <input type="text" value="22CS001">
+                        </div>
+
+                        <div>
+                            <label>Email</label>
+                            <input type="email" value="yug@example.com">
+                        </div>
+
+                        <div>
+                            <label>Phone</label>
+                            <input type="tel" value="+91 9876543210">
+                        </div>
+
+                        <div>
+                            <label>Date of Birth</label>
+                            <input type="date">
+                        </div>
+
+                        <div>
+                            <label>Gender</label>
+                            <select>
+                                <option>Male</option>
+                                <option>Female</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Academic Information -->
+
+                <div class="profile-box">
+
+                    <h3>
+                        <i class="fa-solid fa-graduation-cap"></i>
+                        Academic Information
+                    </h3>
+
+                    <div class="info-grid">
+
+                        <div>
+                            <label>Department</label>
+                            <input type="text" value="Computer Science">
+                        </div>
+
+                        <div>
+                            <label>Semester</label>
+                            <input type="text" value="Semester 5">
+                        </div>
+
+                        <div>
+                            <label>Division</label>
+                            <input type="text" value="A">
+                        </div>
+
+                        <div>
+                            <label>Roll Number</label>
+                            <input type="text" value="122">
+                        </div>
+
+                        <div>
+                            <label>CGPA</label>
+                            <input type="text" value="9.69">
+                        </div>
+
+                        <div>
+                            <label>Academic Year</label>
+                            <input type="text" value="2026-2027">
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Address -->
+
+                <div class="profile-box">
+
+                    <h3>
+                        <i class="fa-solid fa-location-dot"></i>
+                        Address
+                    </h3>
+
+                    <textarea rows="4"
+                        placeholder="Enter your address">
+Rajkot, Gujarat, India
+                    </textarea>
+
+                </div>
+
+                <!-- Buttons -->
+
+                <div class="profile-buttons">
+
+                    <button type="submit">
+                        <i class="fa-solid fa-floppy-disk"></i>
+                        Save Changes
+                    </button>
+
+                    <button type="reset">
+                        <i class="fa-solid fa-rotate-left"></i>
+                        Reset
+                    </button>
+
+                </div>
+
+            </section>
+
+        </section>
+
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+            &copy; 2026 StudentHub. All Rights Reserved.
+        </p>
+
+    </footer>
+
+</body>
+</html>

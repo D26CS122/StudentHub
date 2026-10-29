@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Create Student Account | StudentHub</title>
+
+  <meta name="description"
+        content="Create your StudentHub account and manage your CHARUSAT academic journey, events, achievements and student profile.">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Galada&display=swap"
+        rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="../css/style.css">
+
+</head>
+
+
+<body class="theme-teal">
+
+
+  <!-- ================= FLOATING BACKGROUND ================= -->
+
+  <div class="bg-animation">
+    <span class="ball ball1"></span>
+    <span class="ball ball2"></span>
+    <span class="ball ball3"></span>
+    <span class="ball ball4"></span>
+    <span class="ball ball5"></span>
+  </div>
+
+
+  <!-- ================= HEADER ================= -->
+
+  <header class="header auth-header">
+
+    <div class="container">
+
+      <div class="header-wrapper">
+
+        <!-- Logo -->
+        <a href="index.html" class="logo">
+
+          <div class="logo-box">
+            <i class="fa-solid fa-graduation-cap"></i>
+          </div>
+
+          <div class="logo-text">
+            <h2>StudentHub</h2>
+            <span>CHARUSAT Student Portal</span>
+          </div>
+
+        </a>
+
+        <!-- Right side: theme switcher + home -->
+        <div class="header-right">
+
+          <div class="theme-switcher">
+
+            <button class="theme-btn active" data-theme="teal" type="button">
+              <span class="dot teal"></span>
+              Campus Teal
+            </button>
+
+            <button class="theme-btn" data-theme="blue" type="button">
+              <span class="dot blue"></span>
+              Midnight Blue
+            </button>
+
+          </div>
+
+          <a href="index.html" class="btn btn-outline auth-back">
+            <i class="fa-solid fa-arrow-left"></i>
+            Back to Home
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <!-- ================= REGISTER SECTION ================= -->
+
+  <main class="auth-section">
+
+    <div class="container">
+
+      <div class="auth-wrapper register-wrapper">
+
+
+        <!-- ---------- LEFT: INTRO ---------- -->
+
+        <div class="auth-intro">
+
+          <span class="section-badge">
+            <i class="fa-solid fa-user-plus"></i>
+            Join StudentHub
+          </span>
+
+          <h1>
+            Build your
+            <span>student profile</span>
+          </h1>
+
+          <p>
+            Create your StudentHub account and manage your academic
+            journey, campus activities, achievements and portfolio —
+            everything a CHARUSAT student needs, in one modern portal.
+          </p>
+
+          <div class="auth-features">
+
+            <div class="auth-feature">
+              <div class="auth-feature-icon">
+                <i class="fa-solid fa-chart-line"></i>
+              </div>
+              <div>
+                <h3>Track your progress</h3>
+                <p>Monitor attendance, CGPA and academics.</p>
+              </div>
+            </div>
+
+            <div class="auth-feature">
+              <div class="auth-feature-icon">
+                <i class="fa-solid fa-calendar-days"></i>
+              </div>
+              <div>
+                <h3>Explore campus</h3>
+                <p>Discover events, workshops and activities.</p>
+              </div>
+            </div>
+
+            <div class="auth-feature">
+              <div class="auth-feature-icon">
+                <i class="fa-solid fa-award"></i>
+              </div>
+              <div>
+                <h3>Showcase achievements</h3>
+                <p>Build your professional student portfolio.</p>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="auth-trust">
+
+            <div class="auth-trust-item">
+              <strong>Free</strong>
+              <span>For all students</span>
+            </div>
+
+            <div class="auth-trust-item">
+              <strong>2 min</strong>
+              <span>To get started</span>
+            </div>
+
+            <div class="auth-trust-item">
+              <strong>Secure</strong>
+              <span>Role-based access</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- ---------- RIGHT: REGISTER CARD ---------- -->
+
+        <div class="auth-card register-card">
+
+          <div class="auth-card-header">
+
+            <div class="auth-card-icon">
+              <i class="fa-solid fa-user-plus"></i>
+            </div>
+
+            <h2>Create account</h2>
+            <p>Register as a CHARUSAT student.</p>
+
+          </div>
+
+
+          <form id="studentRegisterForm" class="auth-form" novalidate>
+
+            <!-- Full name -->
+            <div class="form-group">
+
+              <label for="studentName">
+                <i class="fa-solid fa-user"></i>
+                Full name
+              </label>
+
+              <div class="input-wrapper">
+                <i class="fa-solid fa-user"></i>
+                <input type="text"
+                       id="studentName"
+                       name="name"
+                       placeholder="Enter your full name"
+                       autocomplete="name"
+                       required>
+              </div>
+
+            </div>
+
+            <!-- Student ID -->
+            <div class="form-group">
+
+              <label for="registerStudentId">
+                <i class="fa-solid fa-id-card"></i>
+                Student ID
+              </label>
+
+              <div class="input-wrapper">
+                <i class="fa-solid fa-id-badge"></i>
+                <input type="text"
+                       id="registerStudentId"
+                       name="studentId"
+                       placeholder="e.g. 25IT049"
+                       required>
+              </div>
+
+              <small class="input-hint">Your department is detected automatically from your Student ID.</small>
+
+            </div>
+
+            <!-- Email -->
+            <div class="form-group">
+
+              <label for="studentEmail">
+                <i class="fa-solid fa-envelope"></i>
+                CHARUSAT email
+              </label>
+
+              <div class="input-wrapper">
+                <i class="fa-solid fa-at"></i>
+                <input type="email"
+                       id="studentEmail"
+                       name="email"
+                       placeholder="yourid@charusat.edu.in"
+                       autocomplete="email"
+                       required>
+              </div>
+
+              <small class="input-hint">Use your official CHARUSAT email address.</small>
+
+            </div>
+
+            <!-- Semester -->
+            <div class="form-group">
+
+              <label for="semester">
+                <i class="fa-solid fa-layer-group"></i>
+                Current semester
+              </label>
+
+              <div class="input-wrapper select-wrapper">
+                <i class="fa-solid fa-list-ol"></i>
+                <select id="semester" name="semester">
+                  <option value="">Select your semester (optional)</option>
+                  <option value="1">Semester 1</option>
+                  <option value="2">Semester 2</option>
+                  <option value="3">Semester 3</option>
+                  <option value="4">Semester 4</option>
+                  <option value="5">Semester 5</option>
+                  <option value="6">Semester 6</option>
+                  <option value="7">Semester 7</option>
+                  <option value="8">Semester 8</option>
+                </select>
+              </div>
+
+              <small class="input-hint">You can change this later from your profile.</small>
+
+            </div>
+
+            <!-- Password -->
+            <div class="form-group">
+
+              <label for="registerPassword">
+                <i class="fa-solid fa-lock"></i>
+                Password
+              </label>
+
+              <div class="input-wrapper has-toggle">
+                <i class="fa-solid fa-key"></i>
+                <input type="password"
+                       id="registerPassword"
+                       name="password"
+                       placeholder="Create a strong password"
+                       autocomplete="new-password"
+                       minlength="8"
+                       required>
+                <button type="button"
+                        class="password-toggle"
+                        data-target="registerPassword"
+                        aria-label="Show password">
+                  <i class="fa-solid fa-eye"></i>
+                </button>
+              </div>
+
+              <div class="password-strength" id="passwordStrength">
+                <div class="password-strength-track">
+                  <div class="password-strength-fill"></div>
+                </div>
+                <span class="password-strength-label">Use 8+ characters with letters, numbers &amp; symbols.</span>
+              </div>
+
+            </div>
+
+            <!-- Confirm password -->
+            <div class="form-group">
+
+              <label for="confirmPassword">
+                <i class="fa-solid fa-lock"></i>
+                Confirm password
+              </label>
+
+              <div class="input-wrapper has-toggle">
+                <i class="fa-solid fa-check-double"></i>
+                <input type="password"
+                       id="confirmPassword"
+                       name="confirmPassword"
+                       placeholder="Re-enter your password"
+                       autocomplete="new-password"
+                       required>
+                <button type="button"
+                        class="password-toggle"
+                        data-target="confirmPassword"
+                        aria-label="Show password">
+                  <i class="fa-solid fa-eye"></i>
+                </button>
+              </div>
+
+            </div>
+
+            <!-- Terms -->
+            <div class="form-options">
+              <label class="remember-me">
+                <input type="checkbox" id="terms" required>
+                <span>I agree to the
+                  <a href="faq.html" target="_blank">StudentHub terms</a>
+                  and policies.</span>
+              </label>
+            </div>
+
+            <!-- Submit -->
+            <button type="submit" class="btn btn-primary auth-submit">
+              <span>Create student account</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+
+            <!-- Message -->
+            <div id="registerMessage" class="form-message" aria-live="polite"></div>
+
+          </form>
+
+
+          <div class="auth-divider">
+            <span>Already have an account?</span>
+          </div>
+
+          <a href="login.html" target="_blank" class="btn btn-outline auth-register">
+            <i class="fa-solid fa-right-to-bracket"></i>
+            Sign in instead
+          </a>
+
+          <div class="admin-login-link">
+            <span>Are you an administrator?</span>
+            <a href="admin.html" target="_blank">
+              <i class="fa-solid fa-shield-halved"></i>
+              Go to Admin Portal
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </main>
+
+
+  <!-- ================= FOOTER ================= -->
+
+  <footer class="auth-footer">
+    <div class="container">
+      <p>© <span data-year></span> StudentHub — CHARUSAT. All rights reserved.</p>
+    </div>
+  </footer>
+
+
+  <!-- JS -->
+  <script src="../js/script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | StudentHub</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+        
+    <style>
+        .page-header nav {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        /* Practical 3: Responsive Grid Layout for Contact Page */
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 4rem;
+            margin-bottom: 4rem;
+            max-width: 1200px;
+            margin-inline: auto;
+        }
+
+        .contact-info {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
+            color: white;
+            padding: 3rem;
+            border-radius: 1rem;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .contact-info h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .contact-info > p {
+            margin-bottom: 2.5rem;
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .info-box {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .info-box i {
+            font-size: 1.5rem;
+            background: rgba(255, 255, 255, 0.2);
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+
+        .info-box h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .info-box p {
+            opacity: 0.9;
+            margin-bottom: 0;
+        }
+
+        .contact-form {
+            background: var(--surface-color);
+            padding: 3rem;
+            border-radius: 1rem;
+            box-shadow: var(--shadow-md);
+        }
+
+        .contact-form h2 {
+            margin-bottom: 2rem;
+            color: var(--primary-color);
+        }
+
+        .map-section {
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            margin-top: 4rem;
+        }
+        
+        .map-section h2 {
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="page-header navbar">
+
+        <div class="logo">
+            <h2>StudentHub</h2>
+        </div>
+
+        <nav>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="profile.html">Profile</a>
+            <a href="attendance.html">Attendance</a>
+            <a href="contact.html" class="active" style="color: var(--primary-color); font-weight: bold;">Contact</a>
+            
+            <!-- Theme Switcher (Practical 4) -->
+            <button id="theme-toggle" class="theme-btn" aria-label="Toggle Dark Mode" style="background:transparent; border:none; font-size:1.2rem; cursor:pointer; color:inherit;">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+        </nav>
+
+    </header>
+
+    <!-- ================= CONTACT SECTION ================= -->
+
+    <main class="contact-page section">
+
+        <section class="contact-container">
+
+            <!-- Contact Information -->
+
+            <div class="contact-info">
+
+                <h1>Get in Touch</h1>
+
+                <p>
+                    Have any questions or need help? Feel free to contact us.
+                    Our support team is always ready to assist you.
+                </p>
+
+                <div class="info-box">
+
+                    <i class="fa-solid fa-location-dot"></i>
+
+                    <div>
+                        <h3>Address</h3>
+                        <p>StudentHub Campus, Rajkot, Gujarat, India</p>
+                    </div>
+
+                </div>
+
+                <div class="info-box">
+
+                    <i class="fa-solid fa-phone"></i>
+
+                    <div>
+                        <h3>Phone</h3>
+                        <p>+91 98765 43210</p>
+                    </div>
+
+                </div>
+
+                <div class="info-box">
+
+                    <i class="fa-solid fa-envelope"></i>
+
+                    <div>
+                        <h3>Email</h3>
+                        <p>support@studenthub.com</p>
+                    </div>
+
+                </div>
+
+                <div class="info-box">
+
+                    <i class="fa-solid fa-clock"></i>
+
+                    <div>
+                        <h3>Working Hours</h3>
+                        <p>Monday - Saturday</p>
+                        <p>09:00 AM - 05:00 PM</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Contact Form -->
+
+            <div class="contact-form">
+
+                <form id="contactForm" action="#" method="post">
+
+                    <h2>Send Message</h2>
+
+                    <div class="input-box form-group">
+
+                        <label for="name">Full Name</label>
+
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            class="form-input"
+                            placeholder="Enter Your Name"
+                            required>
+
+                    </div>
+
+                    <div class="input-box form-group">
+
+                        <label for="email">Email Address</label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            class="form-input"
+                            placeholder="Enter Your Email"
+                            required>
+
+                    </div>
+
+                    <div class="input-box form-group">
+
+                        <label for="subject">Subject</label>
+
+                        <input
+                            type="text"
+                            id="subject"
+                            name="subject"
+                            class="form-input"
+                            placeholder="Enter Subject"
+                            required>
+
+                    </div>
+
+                    <div class="input-box form-group">
+
+                        <label for="message">Message</label>
+
+                        <textarea
+                            id="message"
+                            name="message"
+                            rows="6"
+                            class="form-input"
+                            placeholder="Write your message..."
+                            style="width: 100%; border: 1px solid var(--border-color); border-radius: 0.5rem; padding: 1rem;"
+                            required></textarea>
+
+                    </div>
+
+                    <button type="submit" id="submitContactBtn" class="submit-btn btn-primary full-width" style="margin-top: 1rem;">
+
+                        <i class="fa-solid fa-paper-plane"></i>
+
+                        <span id="btnText">Send Message</span>
+
+                    </button>
+
+                </form>
+
+            </div>
+
+        </section>
+
+        <!-- ================= GOOGLE MAP ================= -->
+
+        <section class="map-section">
+
+            <h2>Our Location</h2>
+
+            <iframe
+                src="https://www.google.com/maps?q=Rajkot,Gujarat&output=embed"
+                width="100%"
+                height="400"
+                style="border:0;"
+                loading="lazy"
+                allowfullscreen>
+            </iframe>
+
+        </section>
+
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer style="text-align: center; padding: 2rem;">
+
+        <p>
+            &copy; 2026 StudentHub. All Rights Reserved.
+        </p>
+
+    </footer>
+
+    <!-- Global JS -->
+    <script src="js/script.js"></script>
+
+    <!-- Page Specific Script for Practical 4 DOM Manipulation -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const contactForm = document.getElementById('contactForm');
+            const submitBtn = document.getElementById('submitContactBtn');
+            const btnText = document.getElementById('btnText');
+            
+            if (contactForm) {
+                contactForm.addEventListener('submit', (e) => {
+                    e.preventDefault(); // Prevent page reload
+                    
+                    // DOM Manipulation: Change button state to simulate sending
+                    submitBtn.disabled = true;
+                    submitBtn.style.opacity = '0.7';
+                    btnText.textContent = 'Sending...';
+                    
+                    // Simulate network request with setTimeout
+                    setTimeout(() => {
+                        // Success state
+                        submitBtn.style.backgroundColor = '#10b981'; // Green color
+                        submitBtn.style.opacity = '1';
+                        btnText.textContent = 'Message Sent!';
+                        submitBtn.querySelector('i').className = 'fa-solid fa-check';
+                        
+                        // Reset form
+                        contactForm.reset();
+                        
+                        // Revert button after a few seconds
+                        setTimeout(() => {
+                            submitBtn.disabled = false;
+                            submitBtn.style.backgroundColor = '';
+                            btnText.textContent = 'Send Message';
+                            submitBtn.querySelector('i').className = 'fa-solid fa-paper-plane';
+                        }, 3000);
+                        
+                    }, 1500); // 1.5s delay simulation
+                });
+            }
+        });
+    </script>
+
+</body>
+</html>

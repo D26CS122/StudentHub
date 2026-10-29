@@ -1,0 +1,183 @@
+
+/* ================================
+   GENERAL
+================================ */
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f5f7fb;
+    color: #212529;
+}
+
+
+/* ================================
+   NAVBAR
+================================ */
+
+.navbar {
+    padding: 15px 0;
+}
+
+.navbar-brand {
+    font-size: 24px;
+}
+
+.nav-link {
+    margin-left: 15px;
+}
+
+
+/* ================================
+   HERO SECTION
+================================ */
+
+.hero-section {
+    padding: 70px 0;
+    background-color: white;
+}
+
+.hero-section h1 {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+.hero-section p {
+    color: #6c757d;
+    max-width: 650px;
+}
+
+.student-icon {
+    font-size: 120px;
+}
+
+
+/* ================================
+   STATISTICS CARDS
+================================ */
+
+.stat-card {
+    border: none;
+    border-radius: 12px;
+
+    background-color: white;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow: 0 8px 20px
+        rgba(0, 0, 0, 0.12);
+}
+
+.stat-card h2 {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+
+/* ================================
+   COURSE CARDS
+================================ */
+
+.course-card {
+    border: none;
+    border-radius: 12px;
+
+    box-shadow: 0 4px 15px
+        rgba(0, 0, 0, 0.08);
+
+    transition: transform 0.3s ease;
+}
+
+.course-card:hover {
+    transform: translateY(-5px);
+}
+
+.course-card h4 {
+    margin-bottom: 15px;
+}
+
+.course-card p {
+    color: #6c757d;
+    line-height: 1.6;
+}
+
+
+/* ================================
+   BUTTONS
+================================ */
+
+.btn {
+    border-radius: 6px;
+}
+
+
+/* ================================
+   FOOTER
+================================ */
+
+footer {
+    margin-top: 40px;
+}
+
+
+/* ================================
+   TABLET
+================================ */
+
+@media (max-width: 768px) {
+
+    .hero-section {
+        padding: 50px 0;
+        text-align: center;
+    }
+
+    .hero-section h1 {
+        font-size: 38px;
+    }
+
+    .student-icon {
+        font-size: 80px;
+        margin-top: 30px;
+    }
+
+    .nav-link {
+        margin-left: 0;
+    }
+}
+
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 576px) {
+
+    .hero-section {
+        padding: 40px 15px;
+    }
+
+    .hero-section h1 {
+        font-size: 30px;
+    }
+
+    .hero-section p {
+        font-size: 16px;
+    }
+
+    .student-icon {
+        font-size: 70px;
+    }
+
+    .stat-card h2 {
+        font-size: 30px;
+    }
+
+}
+

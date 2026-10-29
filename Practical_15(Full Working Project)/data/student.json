@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "student_id": "SH26001",
+    "name": "Aarav Patel",
+    "email": "aarav.patel@example.test",
+    "course": "Information Technology",
+    "year": 2
+  },
+  {
+    "id": 2,
+    "student_id": "SH26002",
+    "name": "Diya Shah",
+    "email": "diya.shah@example.test",
+    "course": "Electronics",
+    "year": 3
+  },
+  {
+    "id": 3,
+    "student_id": "SH26003",
+    "name": "Vivaan Mehta",
+    "email": "vivaan.mehta@example.test",
+    "course": "Computer Science",
+    "year": 1
+  },
+  {
+    "id": 4,
+    "student_id": "SH26004",
+    "name": "Anaya Desai",
+    "email": "anaya.desai@example.test",
+    "course": "Information Technology",
+    "year": 2
+  },
+  {
+    "id": 5,
+    "student_id": "SH26005",
+    "name": "Reyansh Joshi",
+    "email": "reyansh.joshi@example.test",
+    "course": "Electronics",
+    "year": 3
+  },
+  {
+    "id": 6,
+    "student_id": "SH26006",
+    "name": "Ira Trivedi",
+    "email": "ira.trivedi@example.test",
+    "course": "Computer Science",
+    "year": 1
+  },
+  {
+    "id": 7,
+    "student_id": "SH26007",
+    "name": "Advik Parmar",
+    "email": "advik.parmar@example.test",
+    "course": "Information Technology",
+    "year": 2
+  },
+  {
+    "id": 8,
+    "student_id": "SH26008",
+    "name": "Saanvi Modi",
+    "email": "saanvi.modi@example.test",
+    "course": "Electronics",
+    "year": 3
+  },
+  {
+    "id": 9,
+    "student_id": "SH26009",
+    "name": "Krishna Rao",
+    "email": "krishna.rao@example.test",
+    "course": "Computer Science",
+    "year": 1
+  },
+  {
+    "id": 10,
+    "student_id": "SH26010",
+    "name": "Myra Nair",
+    "email": "myra.nair@example.test",
+    "course": "Information Technology",
+    "year": 2
+  },
+  {
+    "id": 11,
+    "student_id": "SH26011",
+    "name": "Arjun Shah",
+    "email": "arjun.shah@example.test",
+    "course": "Electronics",
+    "year": 3
+  },
+  {
+    "id": 12,
+    "student_id": "SH26012",
+    "name": "Aadhya Patel",
+    "email": "aadhya.patel@example.test",
+    "course": "Computer Science",
+    "year": 1
+  },
+  {
+    "id": 13,
+    "student_id": "SH26013",
+    "name": "Dhruv Mehta",
+    "email": "dhruv.mehta@example.test",
+    "course": "Information Technology",
+    "year": 2
+  },
+  {
+    "id": 14,
+    "student_id": "SH26014",
+    "name": "Kiara Desai",
+    "email": "kiara.desai@example.test",
+    "course": "Electronics",
+    "year": 3
+  },
+  {
+    "id": 15,
+    "student_id": "SH26015",
+    "name": "Atharv Joshi",
+    "email": "atharv.joshi@example.test",
+    "course": "Computer Science",
+    "year": 1
+  }
+]
