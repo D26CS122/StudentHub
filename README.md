@@ -70,30 +70,27 @@ D:\xampp\php\php.exe -l timeout.php
 """""" Admin Password : Admin@2024 """""""
 
 
-Output :  
-
-
 ## Output Screenshots
 
 ### 1. Home Page
-![Home Page](screenshots/home.png)
+![Home Page](./screenshots/home.png)
 
 ### 2. About Page
-![About Page](screenshots/about.png)
+![About Page](./screenshots/about.png)
 
 ### 3. Events Page
-![Events Page](screenshots/events.png)
+![Events Page](./screenshots/events.png)
 
 ### 4. Profile Page
-![Profile Page](screenshots/profile.png)
+![Profile Page](./screenshots/profile.png)
 
 ### 5. Feedback Page
-![Feedback Page](screenshots/feedback.png)
+![Feedback Page](./screenshots/feedback.png)
 
 ### 6. Contact Us Page
-![Contact Us Page](screenshots/contact.png)
+![Contact Us Page](./screenshots/contact.png)
 
 ### 7. Admin Page
-![Admin Page](screenshots/admin.png)
+![Admin Page](./screenshots/admin.png)
 
 
