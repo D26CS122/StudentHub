@@ -71,22 +71,22 @@ D:\xampp\php\php.exe -l timeout.php
 
 Output :  
 1) home Page
-[alt text](image.png)
+![alt text](image.png)
 
 2) about page
-[alt text](image-1.png)
+![alt text](image-1.png)
 
 3) events page
-[alt text](image-2.png)
+![alt text](image-2.png)
 
 4) profile page
-[alt text](image-3.png)
+![alt text](image-3.png)
 
 5) feedback page
-[alt text](image-4.png)
+![alt text](image-4.png)
 
 6) contact us page
-[alt text](image-5.png)
+![alt text](image-5.png)
 
 7) admin page 
-[alt text](image-6.png)
+![alt text](image-6.png)
