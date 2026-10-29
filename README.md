@@ -66,27 +66,34 @@ D:\xampp\php\php.exe -l timeout.php
 # Result: Checked 42 PHP files. Errors: 0
 ```
 """""" Admin username : admin@studenthub.edu """""
+
 """""" Admin Password : Admin@2024 """""""
 
 
 Output :  
-1) home Page
-![alt text](image.png)
 
-2) about page
-![alt text](image-1.png)
 
-3) events page
-![alt text](image-2.png)
+## Output Screenshots
 
-4) profile page
-![alt text](image-3.png)
+### 1. Home Page
+![Home Page](screenshots/home.png)
 
-5) feedback page
-![alt text](image-4.png)
+### 2. About Page
+![About Page](screenshots/about.png)
 
-6) contact us page
-![alt text](image-5.png)
+### 3. Events Page
+![Events Page](screenshots/events.png)
 
-7) admin page 
-![alt text](image-6.png)
+### 4. Profile Page
+![Profile Page](screenshots/profile.png)
+
+### 5. Feedback Page
+![Feedback Page](screenshots/feedback.png)
+
+### 6. Contact Us Page
+![Contact Us Page](screenshots/contact.png)
+
+### 7. Admin Page
+![Admin Page](screenshots/admin.png)
+
+
